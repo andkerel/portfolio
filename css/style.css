@@ -1,0 +1,24 @@
+.title-bar {
+    background-color: black;
+    height: 20px;
+}
+
+.nav-bar {
+    background-color: blue;
+    height: 20px;
+}
+
+.contact-buttons {
+    background-color: green;
+    height: 20px;
+}
+
+.main-bg {
+    background-color: skyblue;
+    height: 50px;
+}
+
+.portfolio-display {
+    background-color: darkslategray;
+    height: 50px;
+}
