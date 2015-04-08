@@ -1,0 +1,309 @@
+/* FONTS */
+@font-face {
+    font-family: 'bonvenocflight';
+    src: url('BonvenoCF-Light-webfont.eot');
+    src: url('BonvenoCF-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('BonvenoCF-Light-webfont.woff') format('woff'),
+         url('BonvenoCF-Light-webfont.ttf') format('truetype'),
+         url('BonvenoCF-Light-webfont.svg#bonvenocflight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* end fonts */
+
+// VARIABLES
+
+    //fonts
+    $bonveno : bonvenocflight, Verdana, sans-serif;
+
+    //transparent bg path
+    $seashell-opacity : "../../imgs/seashell-opacity.png";
+
+    //color scheme
+    $seashell : #F1F0F3;
+    $midyellow: #e8dcb6;
+    $sand: #f3cca2;
+    $dullsky: #7a9ea6;
+    $darkblue: #173059;
+    $sand: #f3cca2;
+    $text: #444444;
+
+
+//MIXINS
+
+    // border-radius
+    @mixin border-radius($radius) {
+      -webkit-border-radius: $radius;
+         -moz-border-radius: $radius;
+          -ms-border-radius: $radius;
+              border-radius: $radius;
+    }
+
+    // full background
+    @mixin full-background($path) {
+        background: url($path) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    //background-size
+    @mixin background-size($width) {
+        -webkit-background-size: $width;
+        -moz-background-size: $width;
+        -o-background-size: $width;
+        background-size: $width;
+    }
+
+    //background-repeat
+    @mixin background-repeat($type) {
+        -webkit-background-repeat: $type;
+        -moz-background-repeat: $type;
+        -o-background-repeat: $type;
+        background-repeat: $type;
+    }
+
+    // transitions
+    @mixin transitions($type, $ms) {
+        -webkit-transition: $type $ms;
+        -moz-transition: $type $ms;
+        -o-transition: $type $ms;
+        transition: $type $ms;
+    }
+
+    // //transforms
+    // @mixin transform($type, $units) {
+    //     -ms-transform: $type($units);
+    //     -webkit-transform: $type($units);
+    //     -moz-transform: $type($units);
+    //     transform: $type($units);
+    // }
+
+
+//MAIN CSS
+
+body {
+    color: $text;
+    line-height: 1.4;
+    background-color: $seashell;
+}
+
+.top-bar {
+    font-family: $bonveno;
+    font-size: 0.75em;
+    @include full-background($seashell-opacity);
+    vertical-align: middle;
+    position: absolute;
+    text-align: center;
+    width: 100vw;
+    z-index: 10000;
+    overflow: hidden;
+    @include transitions(height, 0.3s);
+
+}
+
+.icon-section {
+    font-weight: bold;
+    padding: 1%;
+}
+
+.nav-bar {
+    font-weight: bold;
+}
+
+.nav-collapse { 
+    text-align: right;  
+    ul {
+        li {
+            display: inline-block;
+            padding: 0.75em 0.75em 0.75em 0.75em;
+
+            a {
+                text-decoration: none;
+                color: $text;
+                @include transitions(color, 100ms);
+            }
+            a:hover {
+                border-bottom: 2px #173059 solid;
+                color: $dullsky;
+                @include transitions(color, 100ms);
+            }
+        }
+    }
+}
+
+.nav-toggle {
+    text-align: right;
+    float: right;
+    padding: 7.5%;
+    margin: 1%;
+    text-decoration: none;
+    color: $text;
+    background-image: url("../../imgs/menu.svg");
+    @include background-size(100%);
+    background-position: center;
+    @include background-repeat(no-repeat);
+    @include transitions(color, 100ms);
+    @include transitions(transform, 400ms);
+    @include transitions(display, 300ms);
+}
+
+.nav-toggle:hover {
+    color: $dullsky;
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg);
+    @include transitions(color, 100ms);
+    @include transitions(transform, 400ms);
+}
+
+.nav-toggle-active {
+    text-align: right;
+    float: right;
+    text-decoration: none;
+    padding: 7.5%;
+    color: $text;
+    background-image: url("../../imgs/menu.svg");
+    @include background-size(100%);
+    background-position: center;
+    @include background-repeat(no-repeat);
+    @include transitions(color, 100ms);
+    @include transitions(transform, 400ms);
+}
+
+.main-contact-buttons {
+    display:none;
+    @include transitions(display, 300ms);
+}
+
+.mobile-contact-buttons {
+    display: inline-block;
+    @include transitions(display, 300ms);
+}
+
+.main-bg {
+    @include full-background("../../imgs/no-flight-edit-filter-sm.jpg");
+    width: 100%;
+    top: -10vh;
+    height: 90vh;
+    z-index: 1;
+    @include transitions(height, 0.3s);
+    @include transitions(top, 0.3s);  
+}
+
+.main-name, .main-tagline {
+    font-family: $bonveno; 
+    margin: 0 auto;
+    margin-top: 30vh;
+    text-align: center;
+    @include transitions(margin, 0.3s); 
+}
+
+.main-name {
+    font-size: 2.25em; 
+    color: $text; 
+}
+
+.main-tagline {
+    font-size: 1.25em; 
+    margin-top: 0; 
+    color: $text; 
+}
+
+.portfolio-display {
+    height: 100vh;
+}
+
+
+/*FOR RESPONSIVE MENU*/
+@media screen and (min-width: 40em) {
+
+    .top-bar {
+        height: 10vh;
+        font-size: 1em;
+        position: fixed;
+        display: table-cell;
+        vertical-align: bottom;
+        text-align: center;
+        line-height: 10vh;
+    }
+
+    .icon-section {
+        padding: 0;
+    }
+
+    .nav-collapse {  
+        background: none;
+        text-align: right;
+        ul {
+            li {
+                display: inline;
+                padding: 0 0.5em 0.5em 0.5em;
+                a {
+                   @include transitions(color, 200ms); 
+                }
+                a:hover {
+                    border-bottom: 3px #173059 solid;
+                    @include transitions(color, 200ms);
+                }
+            }
+        }
+    }
+
+    .main-bg {
+        @include full-background("../../imgs/no-flight-edit-filter-sm.jpg");
+        width: 100%;
+        height: 95vh;
+        z-index: 1;
+    }
+
+    .main-name {
+        font-size: 3em;
+        color: $text; 
+        margin-top: 40vh;
+        @include transitions(margin, 0.3s); 
+    }
+
+    .main-tagline {
+        font-size: 1.5em; 
+        color: $text; 
+    }
+
+
+}
+
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+
+    .nav-collapse { 
+        text-align: center; 
+    }
+    .main-contact-buttons {
+        display:inline-block;
+    }
+
+    .mobile-contact-buttons {
+        display: none;
+    }
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+
+@media screen and (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+
+@media screen and (min-width: 1200px) {
+
+}
+

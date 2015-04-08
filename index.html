@@ -11,63 +11,88 @@
     <!-- GRID CSS -->
     <link rel="stylesheet" href="css/bootstrap-grid-only.css" />
     <!-- RESPONSIVE NAV CSS -->
-    <link rel="stylesheet" href="responsive-nav.css">
+    <link rel="stylesheet" href="css/responsive-nav.css">
     <!-- FONTS -->
-    <link rel="stylesheet" type="text/css" href="css/fonts/fonts.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/fonts/fonts.css" /> -->
     <!-- CUSTOM -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom/style.css" />
 
     <!-- VIEWPORT UNITS POLYFILL for Android < 4.4 and IE < 8 -->
     <script src="js/prefixfree.min.js"></script>
     <script src="js/prefixfree.viewport-units.js"></script>
     <!-- RESPONSIVE NAV JS -->
-    <script src="responsive-nav.js"></script>
+    <script src="js/responsive-nav.min.js"></script>
 
 </head>
 
 <body>
 
     <div class="container-fluid">
-        <div class="row">
-            <div id="top" class="col-md-3 title-bar"></div>
-            <div class="col-md-6 nav-bar">
+
+        <!-- TOP BAR -->
+        <div class="row top-bar">
+            <div id="top" class="col-sm-3 col-xs-2 icon-section">
+                .icon place holder.
+            </div>
+            <div class="col-sm-6 col-xs-10 nav-bar">
                 <nav class="nav-collapse">
                     <ul>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#portfolio">portfolio</a></li>
+                        <li><a href="#about">about</a></li>
+                        <li><a href="#contact">contact</a></li>
                     </ul>
                 </nav>
             </div>
-            <div class="col-md-3 contact-buttons"></div>
+            <!-- SOCIAL BUTTONS FOR LARGER SCREENS -->
+            <div class="col-sm-3 main-contact-buttons">
+                .buttons place holder.
+            </div>
         </div>
+
+        <!-- MAIN IMAGE -->
         <div class="row">
-            <div class="col-md-12 main-bg"></div>
+            <div class="col-xs-12 main-bg">
+                <h1 class="main-name">andrea kereliuk</h1>
+                <p class="main-tagline">web developer. marine mammal enthusiast.</p>
+                <p class="main-tagline">random trivia containment facility.</p>
+            </div>
         </div>
+
+        <!-- SOCIAL BUTTONS FOR SMALLER SCREENS -->
+        <div class="col-xs-12 mobile-contact-buttons">
+            .buttons place holder.
+        </div>
+
+        <!-- PORTFOLIO -->
         <div class="row">
-            <div id="portfolio" class="col-md-12 portfolio-display">
+            <div id="portfolio" class="ol-xs-12 portfolio-display">
                 
             </div>
         </div>
+
+        <!-- ABOUT -->
         <div class="row">
-            <div id="about" class="col-md-12 about-display">
+            <div id="about" class="ol-xs-12 about-display">
                 
             </div>
         </div>
+
+        <!-- CONTACT -->
         <div class="row">
-            <div id="contact" class="col-md-12 contact-display">
+            <div id="contact" class="col-xs-12 contact-display">
                 
             </div>
         </div>
     </div>
 
     <!-- SCRIPTS -->
-    <script src="js/script.js"></script>
+    <!-- // <script src="js/script.js"></script> -->
     <!-- FOR RESPONSIVE NAV -->
     <script>
         var nav = responsiveNav(".nav-collapse", {animate: true});
     </script>
 
+    <!-- <div>Icons made by <a href="http://www.flaticon.com/authors/robin-kylander" title="Robin Kylander">Robin Kylander</a>, <a href="http://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div> -->
 
 </body>
 </html>
