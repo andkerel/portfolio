@@ -21,11 +21,11 @@
 
     //color scheme
     $seashell : #F1F0F3;
+    $lightyellow: #f3e5d3;
     $midyellow: #e8dcb6;
     $sand: #f3cca2;
     $dullsky: #7a9ea6;
     $darkblue: #173059;
-    $sand: #f3cca2;
     $text: #444444;
 
 
@@ -46,6 +46,24 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+    }
+
+    // full background mobile
+    @mixin full-background-mobile($path) {
+        background: url($path) no-repeat; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    // window-height background size for browsers not supporting :cover
+    @mixin full-background-mobile-old($path) {
+        background: url($path) no-repeat; 
+        -webkit-background-size: auto 350px;
+        -moz-background-size: auto 350px;
+        -o-background-size: auto 350px;
+        background-size: auto 350px;
     }
 
     //background-size
@@ -72,6 +90,13 @@
         transition: $type $ms;
     }
 
+    //box-shadow
+    @mixin shadow() {
+        -webkit-box-shadow: 0px 0px 21px 0px rgba(255, 255, 255, 0.75);
+        -moz-box-shadow:    0px 0px 21px 0px rgba(255, 255, 255, 0.75);
+        box-shadow:         0px 0px 21px 0px rgba(255, 255, 255, 0.75);
+    }
+
     // //transforms
     // @mixin transform($type, $units) {
     //     -ms-transform: $type($units);
@@ -81,14 +106,16 @@
     // }
 
 
-//MAIN CSS
+/*MAIN CSS*/
 
 body {
     color: $text;
     line-height: 1.4;
-    background-color: $seashell;
+    background-color: $lightyellow;
 }
 
+
+/*TOP BAR & NAV*/
 .top-bar {
     font-family: $bonveno;
     font-size: 0.75em;
@@ -100,12 +127,16 @@ body {
     z-index: 10000;
     overflow: hidden;
     @include transitions(height, 0.3s);
-
 }
 
 .icon-section {
     font-weight: bold;
     padding: 1%;
+}
+
+.top-logo {
+    width: 100%;
+    margin: 1%;
 }
 
 .nav-bar {
@@ -116,6 +147,7 @@ body {
     text-align: right;  
     ul {
         li {
+            font-size: 1.5em;
             display: inline-block;
             padding: 0.75em 0.75em 0.75em 0.75em;
 
@@ -128,6 +160,7 @@ body {
                 border-bottom: 2px #173059 solid;
                 color: $dullsky;
                 @include transitions(color, 100ms);
+                @include transitions(border-bottom, 100ms);
             }
         }
     }
@@ -136,7 +169,7 @@ body {
 .nav-toggle {
     text-align: right;
     float: right;
-    padding: 7.5%;
+    padding: 15%;
     margin: 1%;
     text-decoration: none;
     color: $text;
@@ -144,32 +177,23 @@ body {
     @include background-size(100%);
     background-position: center;
     @include background-repeat(no-repeat);
-    @include transitions(color, 100ms);
     @include transitions(transform, 400ms);
     @include transitions(display, 300ms);
 }
 
 .nav-toggle:hover {
-    color: $dullsky;
     -ms-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     transform: rotate(90deg);
-    @include transitions(color, 100ms);
     @include transitions(transform, 400ms);
 }
 
-.nav-toggle-active {
-    text-align: right;
-    float: right;
-    text-decoration: none;
-    padding: 7.5%;
-    color: $text;
-    background-image: url("../../imgs/menu.svg");
-    @include background-size(100%);
-    background-position: center;
-    @include background-repeat(no-repeat);
-    @include transitions(color, 100ms);
+.active { 
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg);
     @include transitions(transform, 400ms);
 }
 
@@ -183,12 +207,14 @@ body {
     @include transitions(display, 300ms);
 }
 
+/* SPLASH IMG */
 .main-bg {
-    @include full-background("../../imgs/no-flight-edit-filter-sm.jpg");
+    @include full-background-mobile("../../imgs/no-flight-edit-filter-sm.jpg");
     width: 100%;
     top: -10vh;
-    height: 90vh;
+    height: 80vh;
     z-index: 1;
+    text-align: center;
     @include transitions(height, 0.3s);
     @include transitions(top, 0.3s);  
 }
@@ -212,26 +238,254 @@ body {
     color: $text; 
 }
 
+/*SOCIAL MEDIA ICONS - SMALL SCREEN SIZES*/
+
+.mobile-contact-buttons {
+    margin-top: 1em;
+}
+
+.social-icon-below {
+    margin: 0 1em 0 1em;
+    font-size: 2em;
+    color: $lightyellow;
+}
+
+.social-icon-below:hover {
+    color: $dullsky;
+    @include transitions(color, 0.3s); 
+}
+
+/*PORTFOLIO*/
 .portfolio-display {
-    height: 100vh;
+    height: 100px;
+}
+
+/*ABOUT*/
+
+.about-display {
+    text-align: center;
+    font-family: $bonveno;
+    margin: 0 auto;
+}
+
+.cbp_tmtimeline {
+    padding: 0;
+    list-style: none;
+    position: relative;
+    width: 80%;
+} 
+
+/* The line */
+.cbp_tmtimeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: #afdcf8;
+    left: 20%;
+    margin-left: -10px;
+}
+
+.cbp_tmtimeline > li {
+    position: relative;
+}
+
+/* The date/time */
+.cbp_tmtimeline > li .cbp_tmtime {
+    display: block;
+    width: 28%;
+    padding-right: 100px;
+    position: absolute;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span {
+    display: block;
+    text-align: right;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span:first-child {
+    font-size: 1em;
+    color: #bdd0db;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span:last-child {
+    font-size: 1.5em;
+    color: #3594cb;
+}
+
+// .cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
+//     color: #6cbfee;
+// }
+
+/* Right content */
+.cbp_tmtimeline > li .cbp_tmlabel {
+    margin: 0 0 0.5% 22%;
+    background: #3594cb;
+    color: #fff;
+    padding: 1em;
+    font-size: 0.75em;
+    font-weight: 300;
+    line-height: 0.75;
+    position: relative;
+    border-radius: 5px;
+}
+
+// .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
+//     background: #6cbfee;
+// }
+
+.cbp_tmtimeline > li .cbp_tmlabel h2 { 
+    margin-top: 0px;
+    padding: 0 0 0.5% 0;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+/* The triangle */
+.cbp_tmtimeline > li .cbp_tmlabel:after {
+    right: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right-color: #3594cb;
+    border-width: 10px;
+    top: 10px;
+}
+
+// .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+//     border-right-color: #6cbfee;
+// }
+/*end timeline*/
+
+
+/* WHEN background-size: cover NOT SUPPORTED i.e. some smaller older devices */
+@media screen and (max-width: 320px) {
+
+    body {
+        background-color: $seashell;
+    }
+
+    .top-bar {
+        position: static;
+        background: none;
+        background-color: $seashell;
+    }
+
+    .top-logo {
+        width: 50px;
+        vertical-align: middle;
+    }
+
+    .main-bg {
+        @include full-background-mobile-old("../../imgs/no-flight-edit-filter-xs.jpg");
+        vertical-align: middle;
+        top: auto;
+        height: 350px;
+    }
+
+    .main-name {
+        margin-top: 30px;
+        font-size: 1.5em;
+    }
+
+    .main-tagline {
+        font-size: 1em;
+    }
+
+    .nav-toggle {
+        padding: 20px;
+    }
+
+    .nav-toggle:hover {
+        -ms-transform: rotate(0deg);
+        -webkit-transform: 0rotate(0deg);
+        -moz-transform: 0rotate(0deg);
+        transform: rotate(0deg);
+
+    }
+
+    .active { 
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: 0 rotate(0deg);
+        transform: 0 rotate(0deg);
+    }
+
+    .mobile-contact-buttons {
+        margin-top: 0;
+    }
+
+    .social-icon-below {
+        margin: 0 0.5em 0 0.5em;
+        color: $text;
+}
+
 }
 
 
-/*FOR RESPONSIVE MENU*/
+/*MIDDLEMAN MEDIA QUERIES*/
+@media screen and (min-width: 20em) {
+
+    .nav-toggle {
+        padding: 8.5%;
+    }
+
+    .main-tagline {
+        color: $seashell;
+        @include transitions(color, 0.3s);
+    }
+
+}
+
+@media screen and (min-width: 30em) {
+
+    .nav-toggle {
+        padding: 7.5%;
+    }
+
+    .main-tagline {
+        color: $text;
+        @include transitions(color, 0.3s)
+    }
+
+}
+
+/*FOR RESPONSIVE MENU BREAK SIZE*/
 @media screen and (min-width: 40em) {
 
     .top-bar {
         height: 10vh;
         font-size: 1em;
         position: fixed;
-        display: table-cell;
         vertical-align: bottom;
         text-align: center;
         line-height: 10vh;
     }
 
+    .top-bar-shrink {
+        height: 5vh;
+        font-size: 0.75em;
+        line-height: 5vh;
+        @include transitions(height, 0.3s);
+        @include transitions(font, 0.3s);
+    }
+
     .icon-section {
         padding: 0;
+    }
+
+    .top-logo {
+        width: 10vh;
+        vertical-align: middle;
+    }
+
+    .top-logo-shrink {
+        width: 5vh;
+        vertical-align: middle;
+        @include transitions(width, 0.3s);
     }
 
     .nav-collapse {  
@@ -239,6 +493,7 @@ body {
         text-align: right;
         ul {
             li {
+                font-size: 1em;
                 display: inline;
                 padding: 0 0.5em 0.5em 0.5em;
                 a {
@@ -255,7 +510,7 @@ body {
     .main-bg {
         @include full-background("../../imgs/no-flight-edit-filter-sm.jpg");
         width: 100%;
-        height: 95vh;
+        height: 110vh;
         z-index: 1;
     }
 
@@ -271,26 +526,57 @@ body {
         color: $text; 
     }
 
+    .social-icon-below {
+        color: $text;
+    }
+
+    .cbp_tmtimeline {
+        margin: 30px 0 0 0;
+        padding: 0;
+        list-style: none;
+        position: relative;
+        width: 75%
+    } 
+
 
 }
 
-
-
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
-
 /* Small devices (tablets, 768px and up) */
+
+/* SOCIAL MEDIA ICONS BREAK SIZE - LARGE SCREEN SIZES*/
 @media screen and (min-width: 768px) {
 
     .nav-collapse { 
         text-align: center; 
     }
     .main-contact-buttons {
-        display:inline-block;
+        display:block;
     }
+
+    /*SOCIAL MEDIA ICONS*/
+
+    .social-icon-nav {
+        margin-left: 1em;
+        font-size: 1.25em;
+        color: $text;
+    }
+
+    .social-icon-nav:hover {
+        color: $dullsky;
+        @include transitions(color, 0.3s); 
+    }
+
 
     .mobile-contact-buttons {
         display: none;
+    }
+
+    .cbp_tmtimeline {
+        margin: 30px 0 0 0;
+        padding: 0;
+        list-style: none;
+        position: relative;
+        width: 75%
     }
 
 }
