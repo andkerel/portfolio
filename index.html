@@ -8,18 +8,23 @@
     
     <!-- NORMALIZE.CSS -->
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-    <!-- GRID CSS -->
+    <!-- BOOTSTRAP GRID CSS -->
     <link rel="stylesheet" href="css/bootstrap-grid-only.css" />
     <!-- RESPONSIVE NAV CSS -->
-    <link rel="stylesheet" href="css/responsive-nav.css">
-    <!-- FONTS -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/fonts/fonts.css" /> -->
+    <link rel="stylesheet" href="css/responsive-nav.css" />
+    <!-- FONTAWESOME CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
     <!-- CUSTOM -->
     <link rel="stylesheet" type="text/css" href="css/custom/style.css" />
 
     <!-- VIEWPORT UNITS POLYFILL for Android < 4.4 and IE < 8 -->
     <script src="js/prefixfree.min.js"></script>
     <script src="js/prefixfree.viewport-units.js"></script>
+    <!-- MODERNIZER BACKGROUND-SIZE SHIV for IE<9 and iOS<8 -->
+    <script src="js/modernizr.bg-size-shiv.js"></script>
+
+    <!-- jQUERY -->
+    <script src="js/jquery-1.11.2.min.js"></script>
     <!-- RESPONSIVE NAV JS -->
     <script src="js/responsive-nav.min.js"></script>
 
@@ -30,9 +35,9 @@
     <div class="container-fluid">
 
         <!-- TOP BAR -->
-        <div class="row top-bar">
-            <div id="top" class="col-sm-3 col-xs-2 icon-section">
-                .icon place holder.
+        <div id="top" class="row top-bar">
+            <div class="col-sm-3 col-xs-2 icon-section">
+                <img id="logo" class="top-logo" src="imgs/logo.svg" />
             </div>
             <div class="col-sm-6 col-xs-10 nav-bar">
                 <nav class="nav-collapse">
@@ -45,7 +50,9 @@
             </div>
             <!-- SOCIAL BUTTONS FOR LARGER SCREENS -->
             <div class="col-sm-3 main-contact-buttons">
-                .buttons place holder.
+                <a href="https://twitter.com/andkerel"><i class="fa fa-twitter social-icon-nav"></i></a>
+                <a href="https://github.com/andkerel"><i class="fa fa-github social-icon-nav"></i></a>
+                <a href="https://www.linkedin.com/pub/andrea-kereliuk/a3/1ba/841"><i class="fa fa-linkedin-square social-icon-nav"></i></a>
             </div>
         </div>
 
@@ -53,14 +60,16 @@
         <div class="row">
             <div class="col-xs-12 main-bg">
                 <h1 class="main-name">andrea kereliuk</h1>
-                <p class="main-tagline">web developer. marine mammal enthusiast.</p>
+                <p class="main-tagline">web developer.</p>
+                <p class="main-tagline">marine mammal enthusiast.</p>
                 <p class="main-tagline">random trivia containment facility.</p>
+            <!-- SOCIAL BUTTONS FOR SMALLER SCREENS -->
+                <div class="mobile-contact-buttons">
+                    <a href="https://twitter.com/andkerel"><i class="fa fa-twitter social-icon-below"></i></a>
+                    <a href="https://github.com/andkerel"><i class="fa fa-github social-icon-below"></i></a>
+                    <a href="https://www.linkedin.com/pub/andrea-kereliuk/a3/1ba/841"><i class="fa fa-linkedin-square social-icon-below"></i></a>
+                </div>
             </div>
-        </div>
-
-        <!-- SOCIAL BUTTONS FOR SMALLER SCREENS -->
-        <div class="col-xs-12 mobile-contact-buttons">
-            .buttons place holder.
         </div>
 
         <!-- PORTFOLIO -->
@@ -73,7 +82,41 @@
         <!-- ABOUT -->
         <div class="row">
             <div id="about" class="ol-xs-12 about-display">
-                
+                <!-- timeline styling courtesy of http://tympanus.net/codrops/2013/05/02/vertical-timeline/ -->
+                <ul class="cbp_tmtimeline">
+                    <li>
+                        <time class="cbp_tmtime"><span>sept. 2009 -</span> <span>may 2010</span></time>
+                        <div class="cbp_tmicon"></div>
+                        <div class="cbp_tmlabel">
+                            <h2>Carleton University</h2>
+                            <p>Journalism</p>
+                        </div>
+                    </li>
+                    <li>
+                        <time class="cbp_tmtime"><span>sept. 2010 -</span> <span>june 2014</span></time>
+                        <div class="cbp_tmicon"></div>
+                        <div class="cbp_tmlabel">
+                            <h2>University of Guelph</h2>
+                            <p>B.Sc. Wild Life Biology</p>
+                        </div>
+                    </li>
+                    <li>
+                        <time class="cbp_tmtime"><span>jan. 2013 -</span> <span>june 2013</span></time>
+                        <div class="cbp_tmicon"></div>
+                        <div class="cbp_tmlabel">
+                            <h2>Stirling University</h2>
+                            <p>Bilateral Exchange - Environmental Science</p>
+                        </div>
+                    </li>
+                    <li>
+                        <time class="cbp_tmtime"><span>sept. 2014 -</span> <span>(may 2015)</span></time>
+                        <div class="cbp_tmicon"></div>
+                        <div class="cbp_tmlabel">
+                            <h2>Sheridan College</h2>
+                            <p>Interactive Media Management</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -86,7 +129,7 @@
     </div>
 
     <!-- SCRIPTS -->
-    <!-- // <script src="js/script.js"></script> -->
+    <script src="js/script.js"></script>
     <!-- FOR RESPONSIVE NAV -->
     <script>
         var nav = responsiveNav(".nav-collapse", {animate: true});
