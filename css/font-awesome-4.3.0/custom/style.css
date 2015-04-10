@@ -1,14 +1,8 @@
 /* FONTS */
 @font-face {
   font-family: 'bonvenocflight';
-  src: url("fonts/BonvenoCF-Light-webfont.eot");
-  src: url("fonts/BonvenoCF-Light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/BonvenoCF-Light-webfont.woff") format("woff"), url("fonts/BonvenoCF-Light-webfont.ttf") format("truetype"), url("fonts/BonvenoCF-Light-webfont.svg#bonvenocflight") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'trystregular';
-  src: url("fonts/Tryst-Regular-webfont.eot");
-  src: url("fonts/Tryst-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Tryst-Regular-webfont.woff2") format("woff2"), url("fonts/Tryst-Regular-webfont.woff") format("woff"), url("fonts/Tryst-Regular-webfont.ttf") format("truetype"), url("fonts/Tryst-Regular-webfont.svg#trystregular") format("svg");
+  src: url("BonvenoCF-Light-webfont.eot");
+  src: url("BonvenoCF-Light-webfont.eot?#iefix") format("embedded-opentype"), url("BonvenoCF-Light-webfont.woff") format("woff"), url("BonvenoCF-Light-webfont.ttf") format("truetype"), url("BonvenoCF-Light-webfont.svg#bonvenocflight") format("svg");
   font-weight: normal;
   font-style: normal; }
 /* end fonts */
@@ -16,8 +10,7 @@
 body {
   color: #444444;
   line-height: 1.4;
-  background-color: #f3e5d3;
-  font-family: bonvenocflight, Verdana, sans-serif; }
+  background-color: #f3e5d3; }
 
 a {
   font-weight: bold;
@@ -32,13 +25,7 @@ a:hover {
   transition: color 0.3s; }
 
 h3 {
-  margin-bottom: 0.25em;
-  font-family: trystregular, Times, serif;
-  font-weight: 100;
-  font-size: 1.25em;
-  border-bottom: 1px solid #7a9ea6;
-  padding: 0.5% 0.5% 0.5% 1%;
-  margin: 0 auto 1% auto; }
+  margin-bottom: 0.25em; }
 
 /*TOP BAR & NAV*/
 .top-bar {
@@ -164,8 +151,8 @@ h3 {
   -o-background-size: cover;
   background-size: cover;
   width: 100%;
-  padding-top: 10vh;
-  height: 100vh;
+  top: -10vh;
+  height: 80vh;
   z-index: 1;
   text-align: center;
   -webkit-transition: height 0.3s;
@@ -180,7 +167,7 @@ h3 {
 .main-name, .main-tagline {
   font-family: bonvenocflight, Verdana, sans-serif;
   margin: 0 auto;
-  margin-top: 20vh;
+  margin-top: 30vh;
   text-align: center;
   -webkit-transition: margin 0.3s;
   -moz-transition: margin 0.3s;
@@ -203,7 +190,7 @@ h3 {
 .social-icon-below {
   margin: 0 1em 0 1em;
   font-size: 2em;
-  color: #444444; }
+  color: #F1F0F3; }
 
 .social-icon-below:hover {
   color: #7a9ea6;
@@ -212,13 +199,9 @@ h3 {
   -o-transition: color 0.3s;
   transition: color 0.3s; }
 
-/*BOTTOM WRAPPER*/
-#bottom-wrapper {
-  top: -10vh; }
-
 /*PORTFOLIO*/
 .portfolio-display {
-  text-align: center; }
+  height: 100px; }
 
 /*ABOUT*/
 .about-display {
@@ -230,20 +213,16 @@ h3 {
 .description-text {
   font-size: 0.9em;
   line-height: 1.2;
-  margin-top: 2%; }
+  margin-top: 0; }
 
 .skills-section, .skills-section-two {
   padding: 0; }
-
-.skills-section-two {
-  padding-bottom: 1em; }
 
 .skill-single {
   text-align: left;
   font-size: 0.9em;
   display: inline-block;
-  margin: 0;
-  padding-left: 0; }
+  margin: 0; }
 
 .sk-dot {
   display: inline-block;
@@ -253,16 +232,13 @@ h3 {
   background-color: #173059;
   margin-left: 0.8em; }
 
-.about-timeline h3 {
-  margin-bottom: 2%; }
-
 /*TIMELINE - http://tympanus.net/codrops/2013/05/02/vertical-timeline/*/
 .cbp_tmtimeline {
   padding: 0;
   list-style: none;
   position: relative;
   width: 100%;
-  margin: 2% 5% 0 5%;
+  margin: 0 5% 0 5%;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -319,8 +295,7 @@ h3 {
 .cbp_tmtimeline > li .cbp_tmlabel h2 {
   margin: 0;
   padding-bottom: 0.5%;
-  border-bottom: 1px solid #f3e5d3;
-  font-size: 1.25em; }
+  border-bottom: 1px solid #f3e5d3; }
 
 /* The triangle */
 .cbp_tmtimeline > li .cbp_tmlabel:after {
@@ -336,15 +311,10 @@ h3 {
   top: 10px; }
 
 /*end timeline*/
-/*CONTACT*/
-.contact-display {
-  background-color: #f3e5d3; }
-
 /* WHEN background-size: cover NOT SUPPORTED i.e. some smaller older devices */
 @media screen and (max-width: 320px) {
   body {
-    background-color: #f3e5d3;
-    font-weight: bold; }
+    background-color: #f3e5d3; }
 
   .top-bar {
     position: static;
@@ -363,13 +333,11 @@ h3 {
     background-size: auto 350px;
     vertical-align: middle;
     top: auto;
-    height: 350px;
-    color: #444444; }
+    height: 350px; }
 
   .main-name {
-    margin-top: -70px;
-    font-size: 1.5em;
-    padding-top: 0; }
+    margin-top: 30px;
+    font-size: 1.5em; }
 
   .main-tagline {
     font-size: 1em;
@@ -421,7 +389,7 @@ h3 {
     padding: 8.5%; }
 
   .main-tagline {
-    color: #444444;
+    color: #F1F0F3;
     -webkit-transition: color 0.3s;
     -moz-transition: color 0.3s;
     -o-transition: color 0.3s;
@@ -500,12 +468,13 @@ h3 {
     -o-background-size: cover;
     background-size: cover;
     width: 100%;
+    height: 110vh;
     z-index: 1; }
 
   .main-name {
     font-size: 3em;
     color: #444444;
-    margin-top: 20vh;
+    margin-top: 40vh;
     -webkit-transition: margin 0.3s;
     -moz-transition: margin 0.3s;
     -o-transition: margin 0.3s;
@@ -520,18 +489,13 @@ h3 {
 
   .about-description {
     text-align: left; }
-    .about-description h3 {
-      text-align: left; }
-
-  .about-timeline h3 {
-    text-align: left; }
 
   .skill-single {
     text-align: left;
     font-size: 0.9em;
     display: inline-block;
-    margin: 0;
-    padding-left: 0; }
+    padding: 2%;
+    margin: 0; }
 
   .cbp_tmtimeline {
     margin: 0 0 0 0;
@@ -545,18 +509,13 @@ h3 {
     line-height: 1.4; }
 
   .cbp_tmtimeline:before {
-    left: 17%; }
-
-  .cbp_tmtimeline > li .cbp_tmtime span:first-child {
-    font-size: 0.6em;
-    color: #173059; }
-
-  .cbp_tmtimeline > li .cbp_tmtime span:last-child {
-    font-size: 0.8em;
-    color: #173059; } }
+    left: 17%; } }
 /* Small devices (tablets, 768px and up) */
 /* SOCIAL MEDIA ICONS BREAK SIZE - LARGE SCREEN SIZES*/
 @media screen and (min-width: 768px) {
+  .left {
+    text-align: left; }
+
   .nav-collapse {
     text-align: center; }
 
@@ -581,9 +540,6 @@ h3 {
 
   .skills-section {
     padding: 0 15px 0 0; }
-
-  .skill-single {
-    padding: 2%; }
 
   .cbp_tmtimeline {
     padding: 0;
