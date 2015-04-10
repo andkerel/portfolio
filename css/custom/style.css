@@ -338,7 +338,18 @@ h3 {
 /*end timeline*/
 /*CONTACT*/
 .contact-display {
-  background-color: #f3e5d3; }
+  background-color: #f3e5d3;
+  text-align: center; }
+
+.contact-icon {
+  padding: 0 2% 0 2%; }
+
+.contact-display h3 {
+  margin-bottom: 2%; }
+
+.bottom-logo {
+  width: 15%;
+  margin-bottom: 2%; }
 
 /* WHEN background-size: cover NOT SUPPORTED i.e. some smaller older devices */
 @media screen and (max-width: 320px) {
@@ -404,7 +415,7 @@ h3 {
     position: relative; }
 
   .cbp_tmtimeline {
-    margin: 0; }
+    margin: 0 0 20px 0; }
 
   .cbp_tmtimeline > li .cbp_tmtime {
     width: 35%;
@@ -414,7 +425,17 @@ h3 {
     left-margin: 15%; }
 
   .cbp_tmtimeline > li .cbp_tmlabel {
-    left-margin: 15%; } }
+    left-margin: 15%; }
+
+  .contact-display h3 {
+    margin-bottom: 15px; }
+
+  .contact-icon {
+    padding: 0 0.5% 0 0.5%; }
+
+  .bottom-logo {
+    width: 75px;
+    margin-bottom: 15px; } }
 /*MIDDLEMAN MEDIA QUERIES*/
 @media screen and (min-width: 20em) {
   .nav-toggle {
@@ -425,7 +446,10 @@ h3 {
     -webkit-transition: color 0.3s;
     -moz-transition: color 0.3s;
     -o-transition: color 0.3s;
-    transition: color 0.3s; } }
+    transition: color 0.3s; }
+
+  .bottom-logo {
+    width: 20%; } }
 @media screen and (min-width: 30em) {
   .nav-toggle {
     padding: 7.5%; }
@@ -553,7 +577,14 @@ h3 {
 
   .cbp_tmtimeline > li .cbp_tmtime span:last-child {
     font-size: 0.8em;
-    color: #173059; } }
+    color: #173059; }
+
+  .contact-icon {
+    padding: 0 3% 0 3%; }
+
+  .bottom-logo {
+    width: 136px;
+    margin-bottom: 2%; } }
 /* Small devices (tablets, 768px and up) */
 /* SOCIAL MEDIA ICONS BREAK SIZE - LARGE SCREEN SIZES*/
 @media screen and (min-width: 768px) {
