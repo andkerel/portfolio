@@ -312,6 +312,63 @@ h3 {
     text-align: center;
 }
 
+.portfolio-span {
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.portfolio-single-wrapper {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-bottom: 1em;
+}
+
+.portfolio-picture {
+    text-align: center;
+    img {
+        width: 100%;
+        @include transitions(width, 0.5s);
+    }
+}
+
+.portfolio-title {
+    margin-top: 0;
+}
+
+.portfolio-description {
+    font-size: 0.9em;
+}
+
+.launch {
+    border: 2px solid $dullsky;
+    background-color: $dullsky;
+    border-radius: 4px;
+    margin: 0 auto 1em auto;
+    color: $text;
+    @include transitions(background-color, 0.3s);
+}
+
+.launch:hover {
+    background-color: $lightyellow;
+    @include transitions(background-color, 0.3s);
+}
+
+
+.portfolio-tools {
+    display: inline-block;
+    padding: 0;
+    margin-top: 0;
+    li {
+        display: inline-block;
+        font-size: 0.5em;
+        border: 2px solid $seashell;
+        border-radius: 4px;
+        padding: 0.5em;
+    }
+}
+
 /*ABOUT*/
 
 .about-display {
@@ -509,7 +566,7 @@ h3 {
 
 
 /* WHEN background-size: cover NOT SUPPORTED i.e. some smaller older devices */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 320px) and (orientation: portrait) {
 
     body {
         background-color: $lightyellow;
@@ -755,22 +812,22 @@ h3 {
         color: $text; 
     }
 
+
     .social-icon-below {
         color: $text;
     }
 
-    .about-description {
-        text-align: left;
-        h3 {
-            text-align: left;
-            font-size: 1.75em;
-
+    .portfolio-picture {
+        img {
+            width: 60%;
+            @include transitions(width, 0.5s);
         }
     }
 
     .description-text {
         font-size: 1em;
     }
+
 
     .about-timeline {
         h3 {
@@ -871,6 +928,40 @@ h3 {
         display: none;
     }
 
+    /*PORTFOLIO*/
+
+    .portfolio-picture {
+        img {
+            width: 50%;
+            @include transitions(width, 0.5s);
+        }
+    }
+
+    .portfolio-title {
+        margin-top: 1em;
+        font-size: 1.75em;
+    }
+
+    .portfolio-info: {
+        padding-top: 1em;
+        vertical-align: middle;
+        margin: auto 0;
+    }
+
+    .portfolio-description {
+        font-size: 1em;
+    }
+    
+
+    .about-description {
+        text-align: left;
+        h3 {
+            text-align: left;
+            font-size: 1.75em;
+
+        }
+    }
+
     .skills-section {
         padding: 0 15px 0 0;
     }
@@ -898,12 +989,25 @@ h3 {
 /* Medium devices (desktops, 992px and up) */
 
 @media screen and (min-width: 992px) {
+        
+    .launch {
+        background-color: $lightyellow;
+    }
+
+    .launch:hover {
+        background-color: $dullsky;
+        @include transitions(background-color, 0.3s);
+    }
 
 }
 
 /* Large devices (large desktops, 1200px and up) */
 
 @media screen and (min-width: 1200px) {
+
+    .portfolio-single-wrapper {
+        width: 900px;
+    }
 
     .about-display {
         text-align: center;
