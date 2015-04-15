@@ -111,6 +111,12 @@
         box-shadow:         0px 0px 21px 0px rgba(255, 255, 255, 0.75);
     }
 
+    @mixin shadow-black() {
+        -webkit-box-shadow: 0px 0px 21px 0px $text;
+        -moz-box-shadow:    0px 0px 21px 0px $text;
+        box-shadow:         0px 0px 21px 0px $text;
+    }
+
     // //transforms
     // @mixin transform($type, $units) {
     //     -ms-transform: $type($units);
@@ -138,6 +144,10 @@ a {
 a:hover {
     color: $text;
     @include transitions(color, 0.3s);
+}
+
+h2 {
+    font-size: 1.5em;
 }
 
 
@@ -309,16 +319,19 @@ h3 {
     font-family: $bonveno;
     margin: 0 auto;
     background-color: $seashell;
+    padding-bottom: 0.83em;
 }
 
 .description-text {
     font-size: 0.9em;
     line-height: 1.2;
     margin-top: 2%;
+    @include transitions(all, 0.3s);
 }
 
 .skills-section, .skills-section-two {
     padding: 0;
+    @include transitions(all, 0.3s);
 }
 
 .skills-section-two {
@@ -331,6 +344,7 @@ h3 {
     display: inline-block;
     margin: 0;
     padding-left: 0;
+    @include transitions(all, 0.3s);
 }
 
 .sk-dot {
@@ -340,6 +354,8 @@ h3 {
     border-radius: 8px;
     background-color: $darkblue;
     margin-left: 0.8em;
+    @include transitions(width, 0.3s);
+    @include transitions(width, 0.3s);
 }
 
 .about-timeline h3 {
@@ -382,6 +398,7 @@ h3 {
     display: block;
     text-align: right;
     font-weight: bold;
+    @include transitions(all, 0.3s);
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:first-child {
@@ -408,8 +425,9 @@ h3 {
     font-weight: 300;
     line-height: 0.75;
     position: relative;
-    border-radius: 5px;
+    @include border-radius(5px);
     text-align: left;
+    @include transitions(all, 0.3s);
     p {
         margin: 0;
         margin-top: 0.5em;
@@ -426,6 +444,7 @@ h3 {
     padding-bottom: 0.5%;
     border-bottom: 1px solid $lightyellow;
     font-size: 1.25em;
+    @include transitions(all, 0.3s);
 }
 
 /* The triangle */
@@ -461,23 +480,31 @@ h3 {
 
 .contact-display {
     h3 {
-        margin-bottom: 2%;
+        text-align: center;
+        margin: 1% auto 2% auto;
+        width: 75%;
+        @include transitions(all, 0.3s);
     }
 }
 
 .bottom-logo {
     width: 15%;
     margin-bottom: 2%;
+    @include transitions(all, 0.3s);
 }
 
+#dl-resume-button {
+    border: 1px solid $dullsky;
+    @include border-radius(4px);
+    margin: 1% 0 0 0;
+    padding: 0.2em;
+}
 
-
-
-
-
-
-
-
+#dl-resume-button:hover {
+    background-color: $seashell;
+    @include transitions(background-color, 0.3s);
+    color: $dullsky;
+}
 
 
 
@@ -655,6 +682,10 @@ h3 {
 /*ABOVE RESPONSIVE MENU BREAK SIZE*/
 @media screen and (min-width: 40em) {
 
+    h2 {
+        font-size: 2em;
+    }
+
     .top-bar {
         height: 10vh;
         font-size: 1em;
@@ -732,21 +763,29 @@ h3 {
         text-align: left;
         h3 {
             text-align: left;
+            font-size: 1.75em;
+
         }
+    }
+
+    .description-text {
+        font-size: 1em;
     }
 
     .about-timeline {
         h3 {
             text-align: left;
+            font-size: 1.75em;
         }
     }
 
     .skill-single {
         text-align: left;
-        font-size: 0.9em;
+        font-size: 1em;
         display: inline-block;
         margin: 0;
         padding-left: 0;
+        font-weight: bolder;
     }
 
     .cbp_tmtimeline {
@@ -757,25 +796,25 @@ h3 {
         width: 100%
     } 
 
+    .cbp_tmtimeline > li .cbp_tmtime span:first-child {
+        font-size: 0.75em;
+    }
+
+    .cbp_tmtimeline > li .cbp_tmtime span:last-child {
+        font-size: 0.9em;
+    }
+
 
     .cbp_tmtimeline > li .cbp_tmlabel {
         margin: 0 5% 0.5% 22%;
         line-height: 1.4;
+        font-size: 0.9em;
     }
 
     .cbp_tmtimeline:before {
         left: 17%;
     }
 
-    .cbp_tmtimeline > li .cbp_tmtime span:first-child {
-        font-size: 0.6em;
-        color: $darkblue;
-    }
-
-    .cbp_tmtimeline > li .cbp_tmtime span:last-child {
-        font-size: 0.8em;
-        color: $darkblue;
-    }
 
     .contact-icon {
         padding: 0 3% 0 3%;
@@ -847,11 +886,11 @@ h3 {
     }
 
     .cbp_tmtimeline > li .cbp_tmlabel {
-        margin: 0 0 0.5% 25%;
+        margin: 0 0 0.5% 28%;
     }
 
     .cbp_tmtimeline:before {
-        left: 20%;
+        left: 23%;
     }
 
 }
@@ -871,9 +910,40 @@ h3 {
 
     }
 
+    .description-text {
+        font-size: 1.2em;
+    }
+
+    .skill-single {
+        font-size: 1.25em;
+    }
+
+    .sk-dot {
+        width: 1em;
+        height: 1em;
+    }
+
     .cbp_tmtimeline {
         width: 100%;
     }  
+
+
+    .cbp_tmtimeline > li .cbp_tmtime span:first-child {
+        font-size: 0.8em;
+    }
+
+    .cbp_tmtimeline > li .cbp_tmtime span:last-child {
+        font-size: 0.95em;
+    }
+
+    .cbp_tmtimeline:before {
+        left: 20%;
+    }
+
+    .cbp_tmtimeline > li .cbp_tmlabel {
+        margin: 0 0% 0.5% 25%;
+        font-size: 1em;
+    }
 
 
 

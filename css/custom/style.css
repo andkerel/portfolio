@@ -31,6 +31,9 @@ a:hover {
   -o-transition: color 0.3s;
   transition: color 0.3s; }
 
+h2 {
+  font-size: 1.5em; }
+
 h3 {
   margin-bottom: 0.25em;
   font-family: trystregular, Times, serif;
@@ -225,15 +228,24 @@ h3 {
   text-align: center;
   font-family: bonvenocflight, Verdana, sans-serif;
   margin: 0 auto;
-  background-color: #F1F0F3; }
+  background-color: #F1F0F3;
+  padding-bottom: 0.83em; }
 
 .description-text {
   font-size: 0.9em;
   line-height: 1.2;
-  margin-top: 2%; }
+  margin-top: 2%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
 
 .skills-section, .skills-section-two {
-  padding: 0; }
+  padding: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
 
 .skills-section-two {
   padding-bottom: 1em; }
@@ -243,7 +255,11 @@ h3 {
   font-size: 0.9em;
   display: inline-block;
   margin: 0;
-  padding-left: 0; }
+  padding-left: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
 
 .sk-dot {
   display: inline-block;
@@ -251,7 +267,15 @@ h3 {
   height: 0.5em;
   border-radius: 8px;
   background-color: #173059;
-  margin-left: 0.8em; }
+  margin-left: 0.8em;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s; }
 
 .about-timeline h3 {
   margin-bottom: 2%; }
@@ -289,7 +313,11 @@ h3 {
 .cbp_tmtimeline > li .cbp_tmtime span {
   display: block;
   text-align: right;
-  font-weight: bold; }
+  font-weight: bold;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
 
 .cbp_tmtimeline > li .cbp_tmtime span:first-child {
   font-size: 0.5em;
@@ -309,8 +337,15 @@ h3 {
   font-weight: 300;
   line-height: 0.75;
   position: relative;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
   border-radius: 5px;
-  text-align: left; }
+  text-align: left;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
   .cbp_tmtimeline > li .cbp_tmlabel p {
     margin: 0;
     margin-top: 0.5em;
@@ -320,7 +355,11 @@ h3 {
   margin: 0;
   padding-bottom: 0.5%;
   border-bottom: 1px solid #f3e5d3;
-  font-size: 1.25em; }
+  font-size: 1.25em;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
 
 /* The triangle */
 .cbp_tmtimeline > li .cbp_tmlabel:after {
@@ -345,11 +384,38 @@ h3 {
   padding: 0 2% 0 2%; }
 
 .contact-display h3 {
-  margin-bottom: 2%; }
+  text-align: center;
+  margin: 1% auto 2% auto;
+  width: 75%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
 
 .bottom-logo {
   width: 15%;
-  margin-bottom: 2%; }
+  margin-bottom: 2%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+#dl-resume-button {
+  border: 1px solid #7a9ea6;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  margin: 1% 0 0 0;
+  padding: 0.2em; }
+
+#dl-resume-button:hover {
+  background-color: #F1F0F3;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  color: #7a9ea6; }
 
 /* WHEN background-size: cover NOT SUPPORTED i.e. some smaller older devices */
 @media screen and (max-width: 320px) {
@@ -462,6 +528,9 @@ h3 {
     transition: color 0.3s; } }
 /*ABOVE RESPONSIVE MENU BREAK SIZE*/
 @media screen and (min-width: 40em) {
+  h2 {
+    font-size: 2em; }
+
   .top-bar {
     height: 10vh;
     font-size: 1em;
@@ -545,17 +614,23 @@ h3 {
   .about-description {
     text-align: left; }
     .about-description h3 {
-      text-align: left; }
+      text-align: left;
+      font-size: 1.75em; }
+
+  .description-text {
+    font-size: 1em; }
 
   .about-timeline h3 {
-    text-align: left; }
+    text-align: left;
+    font-size: 1.75em; }
 
   .skill-single {
     text-align: left;
-    font-size: 0.9em;
+    font-size: 1em;
     display: inline-block;
     margin: 0;
-    padding-left: 0; }
+    padding-left: 0;
+    font-weight: bolder; }
 
   .cbp_tmtimeline {
     margin: 0 0 0 0;
@@ -564,20 +639,19 @@ h3 {
     position: relative;
     width: 100%; }
 
+  .cbp_tmtimeline > li .cbp_tmtime span:first-child {
+    font-size: 0.75em; }
+
+  .cbp_tmtimeline > li .cbp_tmtime span:last-child {
+    font-size: 0.9em; }
+
   .cbp_tmtimeline > li .cbp_tmlabel {
     margin: 0 5% 0.5% 22%;
-    line-height: 1.4; }
+    line-height: 1.4;
+    font-size: 0.9em; }
 
   .cbp_tmtimeline:before {
     left: 17%; }
-
-  .cbp_tmtimeline > li .cbp_tmtime span:first-child {
-    font-size: 0.6em;
-    color: #173059; }
-
-  .cbp_tmtimeline > li .cbp_tmtime span:last-child {
-    font-size: 0.8em;
-    color: #173059; }
 
   .contact-icon {
     padding: 0 3% 0 3%; }
@@ -622,17 +696,40 @@ h3 {
     position: relative; }
 
   .cbp_tmtimeline > li .cbp_tmlabel {
-    margin: 0 0 0.5% 25%; }
+    margin: 0 0 0.5% 28%; }
 
   .cbp_tmtimeline:before {
-    left: 20%; } }
+    left: 23%; } }
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */
 @media screen and (min-width: 1200px) {
   .about-display {
     text-align: center; }
 
+  .description-text {
+    font-size: 1.2em; }
+
+  .skill-single {
+    font-size: 1.25em; }
+
+  .sk-dot {
+    width: 1em;
+    height: 1em; }
+
   .cbp_tmtimeline {
-    width: 100%; } }
+    width: 100%; }
+
+  .cbp_tmtimeline > li .cbp_tmtime span:first-child {
+    font-size: 0.8em; }
+
+  .cbp_tmtimeline > li .cbp_tmtime span:last-child {
+    font-size: 0.95em; }
+
+  .cbp_tmtimeline:before {
+    left: 20%; }
+
+  .cbp_tmtimeline > li .cbp_tmlabel {
+    margin: 0 0% 0.5% 25%;
+    font-size: 1em; } }
 
 /*# sourceMappingURL=style.css.map */
