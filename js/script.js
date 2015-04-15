@@ -18,5 +18,7 @@ $(document).ready(function() {
         $('.main-bg').addClass("bg-cover-shiv");
     }
 
+    var nav = responsiveNav(".nav-collapse", {animate: true});
+
 
 });
