@@ -9,25 +9,26 @@
     <meta description="Website and portfolio of Andrea Kereliuk, a Toronto-based web developer passionate about learning, design, and marine mammals. One of those things is not like the other." />
 
     <!-- SEO TAGS -->
+    <!-- DISABLED FOR SHERIDAN IMM SERVER ONLY -->
     <!-- for Google -->
-    <meta name="keywords" content="web, developer, tech, design, ux, ui, designer, internet, html, css, javascript" />    
+<!--     <meta name="keywords" content="web, developer, tech, design, ux, ui, designer, internet, html, css, javascript" />    
     <meta name="author" content="Andrea Kereliuk" />
     <meta name="copyright" content="Andrea Kereliuk" />
-    <link rel="author" href="https://plus.google.com/104754644025445914372/about">
+    <link rel="author" href="https://plus.google.com/104754644025445914372/about"> -->
 
     <!-- for Facebook -->          
-    <meta property="og:title" content="Andrea Kereliuk" />
+<!--     <meta property="og:title" content="Andrea Kereliuk" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="logo-og.png" />
     <meta property="og:url" content="http://andreakereliuk.com" />
-    <meta property="og:description" content="Website and portfolio of Andrea Kereliuk, a Toronto-based web developer passionate about learning, design, and marine mammals. One of those things is not like the other." />
+    <meta property="og:description" content="Website and portfolio of Andrea Kereliuk, a Toronto-based web developer passionate about learning, design, and marine mammals. One of those things is not like the other." /> -->
 
     <!-- for Twitter -->  
     <!-- do not edit this line (must say "summary") -->        
-    <meta name="twitter:card" content="summary" /> 
+<!--     <meta name="twitter:card" content="summary" /> 
     <meta name="twitter:title" content="Andrea Kereliuk" />
     <meta name="twitter:description" content="Toronto-based web developer." />
-    <meta name="twitter:image" content="logo.2.og.png" />
+    <meta name="twitter:image" content="logo.2.og.png" /> -->
 
     
     <!-- NORMALIZE.CSS -->
@@ -51,6 +52,8 @@
     <script src="js/jquery-1.11.2.min.js"></script>
     <!-- RESPONSIVE NAV JS -->
     <script src="js/responsive-nav.min.js"></script>
+    <!-- ANIMATE SCROLL CSS -->
+    <script src="js/animatescroll.min.js"></script>
 
     <!-- GOOGLE ANALYTICS -->
     <script>
@@ -80,9 +83,9 @@
             <div class="col-sm-6 col-xs-10 nav-bar">
                 <nav class="nav-collapse">
                     <ul>
-                        <li><a href="#portfolio">portfolio</a></li>
-                        <li><a href="#about">about</a></li>
-                        <li><a href="#contact">contact</a></li>
+                        <li><a id="portfolio-button" href="#portfolio">portfolio</a></li>
+                        <li><a id="about-button" href="#about">about</a></li>
+                        <li><a id="contact-button" href="#contact">contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -109,120 +112,253 @@
                 </div>
             </div>
         </div>
-        <!-- BELOW IMAGE -->
-        <div id="bottom-wrapper">
-            <!-- PORTFOLIO -->
-            <div class="row portfolio-span">
-                <div id="portfolio" class="col-xs-12 portfolio-display">
-                    <h2>portfolio</h2>
-                </div>
 
-                <div class="row">
-                    <div class="container-fluid portfolio-single-wrapper">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 portfolio-picture">
-                                <img src=""/>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 portfolio-info">
-                                <h3 class="portfolio-title"></h3>
-                                <p class="portfolio-description">
-                                    
-                                </p>
-                                <a href="#"><p class="launch">LAUNCH</p></a>
-                                <ul class="portfolio-tools">
-                                    <li></li>
-                                </ul>
-                            </div>
+        <!-- PORTFOLIO -->
+        <div class="row portfolio-span">
+            <div id="portfolio" class="col-xs-12 portfolio-display">
+                <h2>portfolio</h2>
+            </div>
+        </div>
+
+        <div class="row portfolio-span">
+            <div class="col-xs-12">
+
+                <figure class="effect-zoe">
+                    <img src="imgs/portfolio/wweather.png" alt="WorseWeather Image"/>
+                    <figcaption class = "hover-caption">
+                        <h3 class="portfolio-title">WorseWeather</h3>
+                        <p class="portfolio-description">
+                            A small application using OpenWeatherMap.org's API to show you a place where the weather is worse than where you are 
+                            (...so stop complaining). Also imagined as a Pebble Smartwatch app.
+                        </p>
+                        <ul class="portfolio-tools">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>AJAX</li>
+                            <li>API</li>
+                        </ul>
+                        <div class = "launch-buttons">
+                            <a href="http://andreakereliuk.com/worse-weather/" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
+                            <a href="https://github.com/andkerel/worse-weather" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
+                            <a href="https://www.behance.net/gallery/25003375/WorseWeather-for-Pebble" target="_blank"><i class="fa fa-behance social-icon-launch"></i></a>
+                        </div>
+                    </figcaption>
+                </figure>
+                <!-- ... -->
+                <figure class="effect-zoe">
+                    <img src="imgs/portfolio/sinbad.gif" alt="Sinbad Image"/>
+                    <figcaption class = "hover-caption">
+                        <h3 class="portfolio-title">sinbad and the phonegap</h3>
+                        <p class="portfolio-description">
+                            Customize Sinbad, the undersea creature! Complete with a CSS3-animation powered spritesheet. 
+                            It can also run as a mobile app by loading it into PhoneGap Build.
+                        </p>
+                        <ul class="portfolio-tools">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Spritesheets</li>
+                            <li>JavaScript</li>
+                            <li>jQuery</li>
+                        </ul>
+                        <div class = "launch-buttons">
+                            <a href="http://andreakereliuk.com/sinbad-and-the-phonegap/" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
+                            <a href="http://github.com/andkerel/sinbad-and-the-phonegap" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
+                        </div>
+                    </figcaption>
+                </figure>
+                <!-- ... -->
+                <figure class="effect-zoe">
+                    <img src="imgs/portfolio/trappedsun.png" alt="Trapped Sun Image"/>
+                    <figcaption class = "hover-caption">
+                        <h3 class="portfolio-title">trapped sun</h3>
+                        <p class="portfolio-description">
+                            A small three.js feature that uses the arrow keys to move the sun around the space box. Try it - you're trapped!
+                        </p>
+                        <ul class="portfolio-tools">
+                            <li>HTML</li>
+                            <li>Canvas</li>
+                            <li>JavaScript</li>
+                            <li>three.js</li>
+                        </ul>
+                        <div class = "launch-buttons">
+                            <a href="http://andreakereliuk.com/trapped-sun/" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
+                            <a href="https://github.com/andkerel/threejs-trapped-sun" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
+                        </div>
+                    </figcaption>
+                </figure>
+                <!-- ... -->
+                <figure class="effect-zoe">
+                    <img src="imgs/portfolio/snowjs.png" alt="CreateJS Snow Tutorial Image"/>
+                    <figcaption class = "hover-caption">
+                        <h3 class="portfolio-title">CreateJS snow tutorial</h3>
+                        <p class="portfolio-description">
+                            A small CreateJS tutorial to have snow gently fall down a webpage using tweens.
+                        </p>
+                        <ul class="portfolio-tools">
+                            <li>HTML</li>
+                            <li>Canvas</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>CreateJS</li>
+                        </ul>
+                        <div class = "launch-buttons">
+                            <a href="http://andreakereliuk.com/createjs-snow-tutorial/" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
+                        </div>
+                    </figcaption>
+                </figure>
+                <!-- ... -->
+                <figure class="effect-zoe">
+                    <img src="imgs/portfolio/soundblink.gif" alt="Soundblink Image"/>
+                    <figcaption class = "hover-caption">
+                        <h3 class="portfolio-title">soundblink</h3>
+                        <p class="portfolio-description">
+                            An arduino project that helps the user determine if they're being too loud by flashing lights at certain sound levels. 
+                            The more flashing, the more obnoxious the user's noise output is.
+                        </p>
+                        <ul class="portfolio-tools">
+                            <li>Hardware</li>
+                            <li>Arduino</li>
+                        </ul>
+                        <div class = "launch-buttons">
+                            <a href="https://github.com/andkerel/obnoxious-sound-meter" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
+                        </div>
+                    </figcaption>
+                </figure>
+                <!-- ... -->
+                <figure class="effect-zoe">
+                    <img src="imgs/portfolio/socialboat.gif" alt="Socialboat Image"/>
+                    <figcaption class = "hover-caption">
+                        <h3 class="portfolio-title">socialboat</h3>
+                        <p class="portfolio-description">
+                            A memory aid application - remember characteristics about people you've only met once or twice, 
+                            but might be important for future networking. Keep track of an anecdote or personal note so you're 
+                            never caught without a conversation starter.
+                        </p>
+                        <ul class="portfolio-tools">
+                            <li>UI/UX</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>PHP</li>
+                            <li>SQL</li>
+                        </ul>
+                        <div class = "launch-buttons">
+                            <a href="https://www.behance.net/gallery/22893729/Socialboat-Web-Application-Project" target="_blank"><i class="fa fa-behance social-icon-launch"></i></a>
+                        </div>
+                    </figcaption>
+                </figure>
+                <!-- ... -->
+                <figure class="effect-zoe">
+                    <img src="imgs/portfolio/workkit.gif" alt="WORKkit Image"/>
+                    <figcaption class = "hover-caption">
+                        <h3 class="portfolio-title">WORKkit</h3>
+                        <p class="portfolio-description">
+                            Targeted towards recently graduated students, this application was created to help organize many concurrent job applications. 
+                            It also helps to beat the automated application process by suggesting keywords from the job description to place into a 
+                            cover letter or resume.
+                        </p>
+                        <ul class="portfolio-tools">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>AJAX</li>
+                            <li>PHP</li>
+                            <li>SQL</li>
+                        </ul>
+                        <div class = "launch-buttons">
+                            <a href="https://github.com/andkerel/keyword-matcher" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
+                        </div>
+                    </figcaption>
+                </figure>
+                <!-- ... -->
+            </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div class="row">
+            <div id="about" class="col-xs-12 about-display">
+                <h2>about</h2>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10 about-wrapper">
+                    <div class="about-description col-xs-12 col-sm-6">
+                        <!-- intro -->
+                        <h3>hello!</h3>
+                        <p class="description-text">
+                            i'm andrea, a soon-to-be graduate of sheridan college's
+                            <a href="https://www.sheridancollege.ca/academics/programs-and-courses/interactive-media-management.aspx">interactive multimedia</a>
+                             program. i'm a critical thinker and enjoy tackling challenging problems.
+                             i also love to learn and figure out what makes things tick...programmatically speaking.
+                        </p>
+                        <!-- skills -->
+                        <h3>skills, programs, and frameworks</h3>
+                        <div class="col-xs-12 col-sm-6 skills-section">
+                            <p class="skill-single">html</p><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><br>
+                            <p class="skill-single">css</p><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><br>
+                            <p class="skill-single">javascript</p><div class="sk-dot"></div><div class="sk-dot"></div><br>
+                            <p class="skill-single">jquery</p><div class="sk-dot"></div><div class="sk-dot"></div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 skills-section-two">
+                            <p class="skill-single">php</p><div class="sk-dot"></div><br>
+                            <p class="skill-single">git</p><div class="sk-dot"></div><br>
+                            <p class="skill-single">sass</p><div class="sk-dot"></div><br>
+                            <p class="skill-single">arduino</p><div class="sk-dot"></div><div class="sk-dot"></div>
                         </div>
                     </div>
-                </div>
-
-            </div>
-
-            <!-- ABOUT -->
-            <div class="row">
-                <div id="about" class="col-xs-12 about-display">
-                    <h2>about</h2>
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-10 about-wrapper">
-                        <div class="about-description col-xs-12 col-sm-6">
-                            <!-- intro -->
-                            <h3>hello!</h3>
-                            <p class="description-text">
-                                i'm andrea, a soon-to-be graduate of sheridan college's
-                                <a href="https://www.sheridancollege.ca/academics/programs-and-courses/interactive-media-management.aspx">interactive multimedia</a>
-                                 program. i'm a critical thinker and enjoy tackling challenging problems.
-                                 i also love to learn and figure out what makes things tick...programmatically speaking.
-                            </p>
-                            <!-- skills -->
-                            <h3>skills, programs, and frameworks</h3>
-                            <div class="col-xs-12 col-sm-6 skills-section">
-                                <p class="skill-single">html</p><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><br>
-                                <p class="skill-single">css</p><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><br>
-                                <p class="skill-single">javascript</p><div class="sk-dot"></div><div class="sk-dot"></div><br>
-                                <p class="skill-single">jquery</p><div class="sk-dot"></div><div class="sk-dot"></div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 skills-section-two">
-                                <p class="skill-single">php</p><div class="sk-dot"></div><br>
-                                <p class="skill-single">git</p><div class="sk-dot"></div><br>
-                                <p class="skill-single">sass</p><div class="sk-dot"></div><br>
-                                <p class="skill-single">arduino</p><div class="sk-dot"></div><div class="sk-dot"></div>
-                            </div>
-                        </div>
-                        <div class="about-timeline col-xs-12 col-sm-6">
-                            <!-- education -->
-                            <h3>education</h3>
-                            <ul class="cbp_tmtimeline">
-                                <li>
-                                    <time class="cbp_tmtime"><span>sept. 2014 -</span> <span>(may 2015)</span></time>
-                                    <div class="cbp_tmlabel">
-                                        <h2>Sheridan College</h2>
-                                        <p>Interactive Media Management</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <time class="cbp_tmtime"><span>sept. 2010 -</span> <span>june 2014</span></time>
-                                    <div class="cbp_tmlabel">
-                                        <h2>University of Guelph</h2>
-                                        <p>B.Sc. Wild Life Biology</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <time class="cbp_tmtime"><span>jan. 2013 -</span> <span>june 2013</span></time>
-                                    <div class="cbp_tmlabel">
-                                        <h2>Stirling University</h2>
-                                        <p>Bilateral Exchange - Environmental Science</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <time class="cbp_tmtime"><span>sept. 2009 -</span> <span>may 2010</span></time>
-                                    <div class="cbp_tmlabel">
-                                        <h2>Carleton University</h2>
-                                        <p>Journalism</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="about-timeline col-xs-12 col-sm-6">
+                        <!-- education -->
+                        <h3>education</h3>
+                        <ul class="cbp_tmtimeline">
+                            <li>
+                                <time class="cbp_tmtime"><span>sept. 2014 -</span> <span>(may 2015)</span></time>
+                                <div class="cbp_tmlabel">
+                                    <h2>Sheridan College</h2>
+                                    <p>Interactive Media Management</p>
+                                </div>
+                            </li>
+                            <li>
+                                <time class="cbp_tmtime"><span>sept. 2010 -</span> <span>june 2014</span></time>
+                                <div class="cbp_tmlabel">
+                                    <h2>University of Guelph</h2>
+                                    <p>B.Sc. Wild Life Biology</p>
+                                </div>
+                            </li>
+                            <li>
+                                <time class="cbp_tmtime"><span>jan. 2013 -</span> <span>june 2013</span></time>
+                                <div class="cbp_tmlabel">
+                                    <h2>Stirling University</h2>
+                                    <p>Bilateral Exchange - Environmental Science</p>
+                                </div>
+                            </li>
+                            <li>
+                                <time class="cbp_tmtime"><span>sept. 2009 -</span> <span>may 2010</span></time>
+                                <div class="cbp_tmlabel">
+                                    <h2>Carleton University</h2>
+                                    <p>Journalism</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-lg-1"></div>
                 </div>
+                <div class="col-lg-1"></div>
             </div>
+        </div>
 
-            <!-- CONTACT -->
-            <div class="row">
-                <div id="contact" class="col-xs-12 contact-display">
-                    <h2>contact</h2>
-                    <a href="mailto:akereliuk@live.ca" target="_blank" src="svg/email.svg"><i class="fa fa-envelope fa-2x contact-icon"></i></a>
-                    <a href="https://twitter.com/andkerel" target="_blank"><i class="fa fa-twitter fa-2x contact-icon"></i></a>
-                    <a href="https://github.com/andkerel" target="_blank"><i class="fa fa-github fa-2x contact-icon"></i></a>
-                    <a href="https://www.linkedin.com/pub/andrea-kereliuk/a3/1ba/841" target="_blank"><i class="fa fa-linkedin-square fa-2x contact-icon"></i></a>
-                    <a href="http://www.behance.net/akereliuk" target="_blank"><i class="fa fa-behance fa-2x contact-icon"></i></a>
-                    <a href="http://www.andreakereliuk.com/blog" target="_blank"><i class="fa fa-wordpress fa-2x contact-icon"></i></a>
-                    <h3></h3>
-                    <a id="dl-resume-button" href="http://andreakereliuk.com/web-resume.pdf" target="_blank">download resume</a>
-                    <h3></h3>
-                    <img id="logo" class="bottom-logo" src="imgs/logo.svg" />
-                </div>
+        <!-- CONTACT -->
+        <div class="row">
+            <div id="contact" class="col-xs-12 contact-display">
+                <h2>contact</h2>
+                <a href="mailto:akereliuk@live.ca" target="_blank" src="svg/email.svg"><i class="fa fa-envelope fa-2x contact-icon"></i></a>
+                <a href="https://twitter.com/andkerel" target="_blank"><i class="fa fa-twitter fa-2x contact-icon"></i></a>
+                <a href="https://github.com/andkerel" target="_blank"><i class="fa fa-github fa-2x contact-icon"></i></a>
+                <a href="https://www.linkedin.com/pub/andrea-kereliuk/a3/1ba/841" target="_blank"><i class="fa fa-linkedin-square fa-2x contact-icon"></i></a>
+                <a href="http://www.behance.net/akereliuk" target="_blank"><i class="fa fa-behance fa-2x contact-icon"></i></a>
+                <a href="http://www.andreakereliuk.com/blog" target="_blank"><i class="fa fa-wordpress fa-2x contact-icon"></i></a>
+                <h3></h3>
+                <a id="dl-resume-button" href="http://andreakereliuk.com/web-resume.pdf" target="_blank">download resume</a>
+                <h3></h3>
+                <img id="logo" class="bottom-logo" src="imgs/logo.svg" />
+            </div>
             </div>
         </div>
     </div>
@@ -230,6 +366,6 @@
     <!-- SCRIPTS -->
     <script src="js/script.js"></script>
 
-    <!-- timeline styling courtesy of http://tympanus.net/codrops/2013/05/02/vertical-timeline/
+    <!-- timeline styling courtesy of http://tympanus.net/codrops/2013/05/02/vertical-timeline/ -->
 </body>
 </html>

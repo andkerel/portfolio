@@ -117,13 +117,13 @@
         box-shadow:         0px 0px 21px 0px $text;
     }
 
-    // //transforms
-    // @mixin transform($type, $units) {
-    //     -ms-transform: $type($units);
-    //     -webkit-transform: $type($units);
-    //     -moz-transform: $type($units);
-    //     transform: $type($units);
-    // }
+    @mixin vertical-align {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
 
 
 /*MAIN CSS*/
@@ -161,7 +161,6 @@ h3 {
     margin: 0 auto 1% auto;
 }
 
-
 /*TOP BAR & NAV*/
 .top-bar {
     font-family: $bonveno;
@@ -184,6 +183,7 @@ h3 {
 .top-logo {
     width: 100%;
     margin: 1%;
+    cursor: pointer;
 }
 
 .nav-bar {
@@ -302,59 +302,42 @@ h3 {
     @include transitions(color, 0.3s); 
 }
 
-/*BOTTOM WRAPPER*/
-#bottom-wrapper {
-    top: -10vh;
-}
 
 /*PORTFOLIO*/
-.portfolio-display {
-    text-align: center;
-}
 
 .portfolio-span {
-    width: 90%;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.portfolio-single-wrapper {
     width: 100%;
     text-align: center;
-    display: block;
-    margin-bottom: 1em;
+    margin: 0 auto 1em auto;
+    @include transitions(width, 0.3s);
 }
 
-.portfolio-picture {
-    text-align: center;
+.item-wrapper {
+    width: 100%;
+}
+
+.effect-zoe {
+    background-color: $seashell;
+    margin: 0 auto 2em auto;
+    width: 100%;
     img {
         width: 100%;
+        border: 10px solid $seashell;
         @include transitions(width, 0.5s);
     }
 }
 
 .portfolio-title {
-    margin-top: 0;
+    font-size: 1.75em;
 }
 
 .portfolio-description {
-    font-size: 0.9em;
+    text-transform: lowercase;
 }
 
-.launch {
-    border: 2px solid $dullsky;
-    background-color: $dullsky;
-    border-radius: 4px;
-    margin: 0 auto 1em auto;
-    color: $text;
-    @include transitions(background-color, 0.3s);
+.hover-caption {
+    padding: 10px;
 }
-
-.launch:hover {
-    background-color: $lightyellow;
-    @include transitions(background-color, 0.3s);
-}
-
 
 .portfolio-tools {
     display: inline-block;
@@ -362,12 +345,21 @@ h3 {
     margin-top: 0;
     li {
         display: inline-block;
-        font-size: 0.5em;
-        border: 2px solid $seashell;
+        font-size: 0.75em;
+        border: 1px solid $sand;
         border-radius: 4px;
         padding: 0.5em;
+        margin-top: 0.5em;
     }
 }
+
+.social-icon-launch {
+    font-size: 2.5em;
+    margin: 0 0.25em 0 0.25em;
+}
+
+
+
 
 /*ABOUT*/
 
@@ -377,6 +369,8 @@ h3 {
     margin: 0 auto;
     background-color: $seashell;
     padding-bottom: 0.83em;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .description-text {
@@ -468,9 +462,6 @@ h3 {
     color: $darkblue;
 }
 
-// .cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
-//     color: #6cbfee;
-// }
 
 /* Right content */
 .cbp_tmtimeline > li .cbp_tmlabel {
@@ -492,9 +483,6 @@ h3 {
     }
 }
 
-// .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
-//     background: #6cbfee;
-// }
 
 .cbp_tmtimeline > li .cbp_tmlabel h2 { 
     margin: 0;
@@ -517,10 +505,6 @@ h3 {
     border-width: 10px;
     top: 10px;
 }
-
-// .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-//     border-right-color: #6cbfee;
-// }
 /*end timeline*/
 
 /*CONTACT*/
@@ -585,15 +569,18 @@ h3 {
     }
 
     .main-bg {
+        position:static;
         @include full-background-mobile-old("../../imgs/no-flight-edit-filter-xs.jpg");
         vertical-align: middle;
         top: auto;
+        padding-top: 0;
         height: 350px;
         color: $text;
     }
 
     .main-name {
-        margin-top: -70px;
+        margin-top: 1em;
+        position:satic;
         font-size: 1.5em;
         padding-top: 0;
     }
@@ -674,23 +661,6 @@ h3 {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*MIDDLEMAN MEDIA QUERIES*/
 @media screen and (min-width: 20em) {
 
@@ -721,18 +691,6 @@ h3 {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -817,11 +775,10 @@ h3 {
         color: $text;
     }
 
-    .portfolio-picture {
-        img {
-            width: 60%;
-            @include transitions(width, 0.5s);
-        }
+
+    .portfolio-span {
+        width: 68%;
+        @include transitions(width, 0.3s);
     }
 
     .description-text {
@@ -887,17 +844,6 @@ h3 {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* Small devices (tablets, 768px and up) */
 
 /* SOCIAL MEDIA ICONS BREAK SIZE - LARGE SCREEN SIZES*/
@@ -930,28 +876,144 @@ h3 {
 
     /*PORTFOLIO*/
 
-    .portfolio-picture {
+    .portfolio-span {
+        width:95%;
+    }
+
+    .effect-zoe {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        margin: 10px 1%;
+        min-width: 320px;
+        max-width: 400px;
+        width: 45%;
+        text-align: center;
         img {
-            width: 50%;
-            @include transitions(width, 0.5s);
+            position: relative;
+            display: block;
+            min-height: 100%;
+            max-width: 100%;
+            opacity: 1;
+            @include transitions(opacity, 0.3s);
+        }
+        figcaption {
+            position: absolute;
+            font-size: 1em;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; 
+
+            // top: 90%;
+            width: 95%;
+            margin: 0 auto;
+            bottom: 0;
+            padding: 2.5%;
+            // height: 1.75em;
+            color: $text;
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            -webkit-transform: translate3d(0,100%,0);
+            transform: translate3d(0,100%,0);
+            h3 {
+                position: absolute;
+                bottom: 10px;
+                left: 20px;
+                color: $text;
+                font-weight: bolder;
+                border: none;
+                font-size: 1.2em;
+                display: inline-block;
+                -webkit-transition: -webkit-transform 0.35s;
+                transition: transform 0.35s;
+            }
+        }
+        figcaption, figcaption > a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .launch-buttons {
+            position: absolute;
+            right: 20px;
+            bottom: 15px;
+            i {
+                font-size: 2em;
+                -webkit-transition: -webkit-transform 0.35s;
+                transition: transform 0.35s;
+                -webkit-transform: translate3d(0,200%,0);
+                transform: translate3d(0,200%,0);
+            }
+        }
+        .portfolio-description {
+            opacity: 0.85;
+            position: absolute;
+            background: $seashell;
+            top: 22%;
+            color: $text;
+            font-size: 60%;
+            width: 90%;
+            margin: 0 2.5% 0 2.5%;
+            border-radius: 10px;
+            padding: 2.5%;
+            -webkit-transition: opacity 0.35s;
+            transition: opacity 0.35s;
+            -webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            -webkit-transform: translate3d(-200%,-195%,0);
+            transform: translate3d(-200%,-195%,0);
         }
     }
 
-    .portfolio-title {
-        margin-top: 1em;
-        font-size: 1.75em;
+    .social-icon-launch {
+        font-size: 2em;
+        margin: 0 0.05em 0 0.05em;
     }
 
-    .portfolio-info: {
-        padding-top: 1em;
-        vertical-align: middle;
-        margin: auto 0;
+    .portfolio-tools {
+        -webkit-transition: -webkit-transform 0.35s;
+        transition: transform 0.35s;
+        -webkit-transform: translate3d(0,-1000%,0);
+        transform: translate3d(0,-1000%,0);
+        li {
+            font-size: 0.6em;
+            background: $seashell;
+            opacity: 0.85;
+        }
     }
 
-    .portfolio-description {
-        font-size: 1em;
+    .effect-zoe:hover {
+        figcaption, figcaption h3, .launch-buttons i {
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+        img {
+            opacity: 0.3;
+            @include transitions(opacity, 0.3s);
+        }
+        h3 {
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+           -webkit-transition-delay: 0.05s;
+            transition-delay: 0.05s; 
+        }
+        .portfolio-tools {
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+        .portfolio-description {
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+
     }
-    
+
 
     .about-description {
         text-align: left;
@@ -986,18 +1048,61 @@ h3 {
 
 }
 
+/*for portfolio item font sizes */
+
+@media screen and (min-width: 850px) {
+
+    .effect-zoe {
+        figcaption h3 {
+            font-size: 1.4em;
+        }
+        .portfolio-description {
+            font-size: 70%;
+            top: 24%;
+        }
+    }
+
+    .social-icon-launch {
+        font-size: 2em;
+        margin: 0 0.05em 0 0.05em;
+    }
+
+    .portfolio-tools {
+        li {
+            font-size: 0.7em;
+            background: $seashell;
+            opacity: 0.85;
+        }
+    }
+
+}
+
 /* Medium devices (desktops, 992px and up) */
 
 @media screen and (min-width: 992px) {
-        
-    .launch {
-        background-color: $lightyellow;
+  
+    .effect-zoe {
+        figcaption h3 {
+            font-size: 1.6em;
+        }
+        .portfolio-description {
+            font-size: 83%;
+            top: 23%;
+        }
     }
 
-    .launch:hover {
-        background-color: $dullsky;
-        @include transitions(background-color, 0.3s);
+    .social-icon-launch {
+        font-size: 2em;
+        margin: 0 0.1em 0 0.1em;
     }
+
+    .portfolio-tools {
+        li {
+            font-size: 0.8em;
+            background: $seashell;
+            opacity: 0.85;
+        }
+    }      
 
 }
 

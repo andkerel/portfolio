@@ -69,7 +69,8 @@ h3 {
 
 .top-logo {
   width: 100%;
-  margin: 1%; }
+  margin: 1%;
+  cursor: pointer; }
 
 .nav-bar {
   font-weight: bold; }
@@ -215,57 +216,39 @@ h3 {
   -o-transition: color 0.3s;
   transition: color 0.3s; }
 
-/*BOTTOM WRAPPER*/
-#bottom-wrapper {
-  top: -10vh; }
-
 /*PORTFOLIO*/
-.portfolio-display {
-  text-align: center; }
-
 .portfolio-span {
-  width: 90%;
-  text-align: center;
-  margin: 0 auto; }
-
-.portfolio-single-wrapper {
   width: 100%;
   text-align: center;
-  display: block;
-  margin-bottom: 1em; }
+  margin: 0 auto 1em auto;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s; }
 
-.portfolio-picture {
-  text-align: center; }
-  .portfolio-picture img {
+.item-wrapper {
+  width: 100%; }
+
+.effect-zoe {
+  background-color: #F1F0F3;
+  margin: 0 auto 2em auto;
+  width: 100%; }
+  .effect-zoe img {
     width: 100%;
+    border: 10px solid #F1F0F3;
     -webkit-transition: width 0.5s;
     -moz-transition: width 0.5s;
     -o-transition: width 0.5s;
     transition: width 0.5s; }
 
 .portfolio-title {
-  margin-top: 0; }
+  font-size: 1.75em; }
 
 .portfolio-description {
-  font-size: 0.9em; }
+  text-transform: lowercase; }
 
-.launch {
-  border: 2px solid #7a9ea6;
-  background-color: #7a9ea6;
-  border-radius: 4px;
-  margin: 0 auto 1em auto;
-  color: #444444;
-  -webkit-transition: background-color 0.3s;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  transition: background-color 0.3s; }
-
-.launch:hover {
-  background-color: #f3e5d3;
-  -webkit-transition: background-color 0.3s;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  transition: background-color 0.3s; }
+.hover-caption {
+  padding: 10px; }
 
 .portfolio-tools {
   display: inline-block;
@@ -273,10 +256,15 @@ h3 {
   margin-top: 0; }
   .portfolio-tools li {
     display: inline-block;
-    font-size: 0.5em;
-    border: 2px solid #F1F0F3;
+    font-size: 0.75em;
+    border: 1px solid #f3cca2;
     border-radius: 4px;
-    padding: 0.5em; }
+    padding: 0.5em;
+    margin-top: 0.5em; }
+
+.social-icon-launch {
+  font-size: 2.5em;
+  margin: 0 0.25em 0 0.25em; }
 
 /*ABOUT*/
 .about-display {
@@ -284,7 +272,9 @@ h3 {
   font-family: bonvenocflight, Verdana, sans-serif;
   margin: 0 auto;
   background-color: #F1F0F3;
-  padding-bottom: 0.83em; }
+  padding-bottom: 0.83em;
+  padding-left: 0;
+  padding-right: 0; }
 
 .description-text {
   font-size: 0.9em;
@@ -488,6 +478,7 @@ h3 {
     vertical-align: middle; }
 
   .main-bg {
+    position: static;
     background: url("../../imgs/no-flight-edit-filter-xs.jpg") no-repeat;
     -webkit-background-size: auto 350px;
     -moz-background-size: auto 350px;
@@ -495,11 +486,13 @@ h3 {
     background-size: auto 350px;
     vertical-align: middle;
     top: auto;
+    padding-top: 0;
     height: 350px;
     color: #444444; }
 
   .main-name {
-    margin-top: -70px;
+    margin-top: 1em;
+    position: satic;
     font-size: 1.5em;
     padding-top: 0; }
 
@@ -666,12 +659,12 @@ h3 {
   .social-icon-below {
     color: #444444; }
 
-  .portfolio-picture img {
-    width: 60%;
-    -webkit-transition: width 0.5s;
-    -moz-transition: width 0.5s;
-    -o-transition: width 0.5s;
-    transition: width 0.5s; }
+  .portfolio-span {
+    width: 68%;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    -o-transition: width 0.3s;
+    transition: width 0.3s; }
 
   .description-text {
     font-size: 1em; }
@@ -741,22 +734,127 @@ h3 {
     display: none; }
 
   /*PORTFOLIO*/
-  .portfolio-picture img {
-    width: 50%;
-    -webkit-transition: width 0.5s;
-    -moz-transition: width 0.5s;
-    -o-transition: width 0.5s;
-    transition: width 0.5s; }
+  .portfolio-span {
+    width: 95%; }
 
-  .portfolio-title {
-    margin-top: 1em;
-    font-size: 1.75em; }
+  .effect-zoe {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 320px;
+    max-width: 400px;
+    width: 45%;
+    text-align: center; }
+    .effect-zoe img {
+      position: relative;
+      display: block;
+      min-height: 100%;
+      max-width: 100%;
+      opacity: 1;
+      -webkit-transition: opacity 0.3s;
+      -moz-transition: opacity 0.3s;
+      -o-transition: opacity 0.3s;
+      transition: opacity 0.3s; }
+    .effect-zoe figcaption {
+      position: absolute;
+      font-size: 1em;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      width: 95%;
+      margin: 0 auto;
+      bottom: 0;
+      padding: 2.5%;
+      color: #444444;
+      -webkit-transition: -webkit-transform 0.35s;
+      transition: transform 0.35s;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0); }
+      .effect-zoe figcaption h3 {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        color: #444444;
+        font-weight: bolder;
+        border: none;
+        font-size: 1.2em;
+        display: inline-block;
+        -webkit-transition: -webkit-transform 0.35s;
+        transition: transform 0.35s; }
+    .effect-zoe figcaption, .effect-zoe figcaption > a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    .effect-zoe .launch-buttons {
+      position: absolute;
+      right: 20px;
+      bottom: 15px; }
+      .effect-zoe .launch-buttons i {
+        font-size: 2em;
+        -webkit-transition: -webkit-transform 0.35s;
+        transition: transform 0.35s;
+        -webkit-transform: translate3d(0, 200%, 0);
+        transform: translate3d(0, 200%, 0); }
+    .effect-zoe .portfolio-description {
+      opacity: 0.85;
+      position: absolute;
+      background: #F1F0F3;
+      top: 22%;
+      color: #444444;
+      font-size: 60%;
+      width: 90%;
+      margin: 0 2.5% 0 2.5%;
+      border-radius: 10px;
+      padding: 2.5%;
+      -webkit-transition: opacity 0.35s;
+      transition: opacity 0.35s;
+      -webkit-backface-visibility: hidden;
+      /* Fix for Chrome 37.0.2062.120 (Mac) */
+      -webkit-transition: -webkit-transform 0.35s;
+      transition: transform 0.35s;
+      -webkit-transform: translate3d(-200%, -195%, 0);
+      transform: translate3d(-200%, -195%, 0); }
 
-  .portfolio-info-padding-top: 1em;
-  .portfolio-info-vertical-align: middle;
-  .portfolio-info-margin: auto 0;
-  .portfolio-description {
-    font-size: 1em; }
+  .social-icon-launch {
+    font-size: 2em;
+    margin: 0 0.05em 0 0.05em; }
+
+  .portfolio-tools {
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0, -1000%, 0);
+    transform: translate3d(0, -1000%, 0); }
+    .portfolio-tools li {
+      font-size: 0.6em;
+      background: #F1F0F3;
+      opacity: 0.85; }
+
+  .effect-zoe:hover figcaption, .effect-zoe:hover figcaption h3, .effect-zoe:hover .launch-buttons i {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  .effect-zoe:hover img {
+    opacity: 0.3;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+  .effect-zoe:hover h3 {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s; }
+  .effect-zoe:hover .portfolio-tools {
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  .effect-zoe:hover .portfolio-description {
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
 
   .about-description {
     text-align: left; }
@@ -780,17 +878,38 @@ h3 {
 
   .cbp_tmtimeline:before {
     left: 23%; } }
+/*for portfolio item font sizes */
+@media screen and (min-width: 850px) {
+  .effect-zoe figcaption h3 {
+    font-size: 1.4em; }
+  .effect-zoe .portfolio-description {
+    font-size: 70%;
+    top: 24%; }
+
+  .social-icon-launch {
+    font-size: 2em;
+    margin: 0 0.05em 0 0.05em; }
+
+  .portfolio-tools li {
+    font-size: 0.7em;
+    background: #F1F0F3;
+    opacity: 0.85; } }
 /* Medium devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
-  .launch {
-    background-color: #f3e5d3; }
+  .effect-zoe figcaption h3 {
+    font-size: 1.6em; }
+  .effect-zoe .portfolio-description {
+    font-size: 83%;
+    top: 23%; }
 
-  .launch:hover {
-    background-color: #7a9ea6;
-    -webkit-transition: background-color 0.3s;
-    -moz-transition: background-color 0.3s;
-    -o-transition: background-color 0.3s;
-    transition: background-color 0.3s; } }
+  .social-icon-launch {
+    font-size: 2em;
+    margin: 0 0.1em 0 0.1em; }
+
+  .portfolio-tools li {
+    font-size: 0.8em;
+    background: #F1F0F3;
+    opacity: 0.85; } }
 /* Large devices (large desktops, 1200px and up) */
 @media screen and (min-width: 1200px) {
   .portfolio-single-wrapper {

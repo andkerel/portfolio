@@ -13,6 +13,27 @@ $(document).ready(function() {
       }
     });
 
+    $('#logo').click(function() {
+        $('html').animatescroll();
+        return false;
+    });
+
+    $('#portfolio-button').click(function() {
+        $('#portfolio').animatescroll({padding:0});
+        return false;
+    });
+
+
+    $('#about-button').click(function() {
+        $('#about').animatescroll({padding:0});
+        return false;
+    });
+
+    $('#contact-button').click(function() {
+        $('#contact').animatescroll({padding:0});
+        return false;
+    });  
+
     // WHEN background-size: cover NOT SUPPORTED
     if (!Modernizr.backgroundsize) {
         $('.main-bg').addClass("bg-cover-shiv");
