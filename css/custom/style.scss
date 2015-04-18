@@ -618,6 +618,10 @@ h3 {
         color: $text;
     }
 
+    .hover-caption {
+        padding: 0;
+    }
+
     .cbp_tmtimeline > li .cbp_tmlabel {
         margin: 0 0 0.5% 22%;
         font-size: 0.75em;
@@ -888,11 +892,12 @@ h3 {
         min-width: 320px;
         max-width: 400px;
         width: 45%;
+        height: 45%;
         text-align: center;
         img {
             position: relative;
             display: block;
-            min-height: 100%;
+            // min-height: 100%;
             max-width: 100%;
             opacity: 1;
             @include transitions(opacity, 0.3s);
