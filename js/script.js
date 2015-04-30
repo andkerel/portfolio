@@ -34,10 +34,11 @@ $(document).ready(function() {
         return false;
     });  
 
-    // WHEN background-size: cover NOT SUPPORTED
-    if (!Modernizr.backgroundsize) {
-        $('.main-bg').addClass("bg-cover-shiv");
-    }
+    $('#bottom-logo').click(function() {
+        $('html').animatescroll();
+        return false;
+    });
+
 
     var nav = responsiveNav(".nav-collapse", {animate: true});
 

@@ -70,7 +70,11 @@ h3 {
 .top-logo {
   width: 100%;
   margin: 1%;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s; }
 
 .nav-bar {
   font-weight: bold; }
@@ -162,6 +166,7 @@ h3 {
 
 /* SPLASH IMG */
 .main-bg {
+  position: static;
   background: url("../../imgs/no-flight-edit-filter-sm.jpg") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -286,6 +291,7 @@ h3 {
   transition: all 0.3s; }
 
 .skills-section, .skills-section-two {
+  text-align: left;
   padding: 0;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -294,6 +300,9 @@ h3 {
 
 .skills-section-two {
   padding-bottom: 1em; }
+
+.skill-names {
+  text-align: right; }
 
 .skill-single {
   text-align: left;
@@ -344,7 +353,7 @@ h3 {
   top: 0;
   bottom: 0;
   width: 10px;
-  background: #7a9ea6;
+  background: #f3cca2;
   left: 20%; }
 
 .cbp_tmtimeline > li {
@@ -366,17 +375,17 @@ h3 {
 
 .cbp_tmtimeline > li .cbp_tmtime span:first-child {
   font-size: 0.5em;
-  color: #173059; }
+  color: #444444; }
 
 .cbp_tmtimeline > li .cbp_tmtime span:last-child {
   font-size: 0.75em;
-  color: #173059; }
+  color: #444444; }
 
 /* Right content */
 .cbp_tmtimeline > li .cbp_tmlabel {
   margin: 0 10% 0.5% 25%;
-  background: #173059;
-  color: #f3e5d3;
+  background: #7a9ea6;
+  color: #173059;
   padding: 0.5em;
   font-size: 0.75em;
   font-weight: 300;
@@ -399,7 +408,7 @@ h3 {
 .cbp_tmtimeline > li .cbp_tmlabel h2 {
   margin: 0;
   padding-bottom: 0.5%;
-  border-bottom: 1px solid #f3e5d3;
+  border-bottom: 1px solid #173059;
   font-size: 1.25em;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -415,7 +424,7 @@ h3 {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-right-color: #173059;
+  border-right-color: #7a9ea6;
   border-width: 10px;
   top: 10px; }
 
@@ -437,13 +446,14 @@ h3 {
   -o-transition: all 0.3s;
   transition: all 0.3s; }
 
-.bottom-logo {
+#bottom-logo {
   width: 15%;
   margin-bottom: 2%;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  cursor: pointer; }
 
 #dl-resume-button {
   border: 1px solid #7a9ea6;
@@ -550,7 +560,7 @@ h3 {
   .contact-icon {
     padding: 0 0.5% 0 0.5%; }
 
-  .bottom-logo {
+  #bottom-logo {
     width: 75px;
     margin-bottom: 15px; } }
 /*MIDDLEMAN MEDIA QUERIES*/
@@ -565,7 +575,7 @@ h3 {
     -o-transition: color 0.3s;
     transition: color 0.3s; }
 
-  .bottom-logo {
+  #bottom-logo {
     width: 20%; } }
 @media screen and (min-width: 30em) {
   .nav-toggle {
@@ -576,7 +586,10 @@ h3 {
     -webkit-transition: color 0.3s;
     -moz-transition: color 0.3s;
     -o-transition: color 0.3s;
-    transition: color 0.3s; } }
+    transition: color 0.3s; }
+
+  .skills-section, .skills-section-two {
+    width: 25%; } }
 /*ABOVE RESPONSIVE MENU BREAK SIZE*/
 @media screen and (min-width: 40em) {
   h2 {
@@ -684,6 +697,12 @@ h3 {
     padding-left: 0;
     font-weight: bolder; }
 
+  .sk-dot {
+    margin-left: 0.6em;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 36px; }
+
   .cbp_tmtimeline {
     margin: 0 0 0 0;
     padding: 0;
@@ -708,7 +727,7 @@ h3 {
   .contact-icon {
     padding: 0 3% 0 3%; }
 
-  .bottom-logo {
+  #bottom-logo {
     width: 136px;
     margin-bottom: 2%; } }
 /* Small devices (tablets, 768px and up) */
@@ -866,10 +885,11 @@ h3 {
       font-size: 1.75em; }
 
   .skills-section {
-    padding: 0 15px 0 0; }
+    padding: 0 0 0 0; }
 
-  .skill-single {
-    padding: 2%; }
+  .sk-dot {
+    margin-left: 0.2em;
+    margin-right: 0.1em; }
 
   .cbp_tmtimeline {
     padding: 0;
@@ -896,7 +916,11 @@ h3 {
   .portfolio-tools li {
     font-size: 0.7em;
     background: #F1F0F3;
-    opacity: 0.85; } }
+    opacity: 0.85; }
+
+  .sk-dot {
+    margin-left: 0.3em;
+    margin-right: 0.15em; } }
 /* Medium devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
   .effect-zoe figcaption h3 {
@@ -928,8 +952,9 @@ h3 {
     font-size: 1.25em; }
 
   .sk-dot {
-    width: 1em;
-    height: 1em; }
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0.15em 0.05em 0.15em 0.4em; }
 
   .cbp_tmtimeline {
     width: 100%; }

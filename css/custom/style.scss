@@ -184,6 +184,7 @@ h3 {
     width: 100%;
     margin: 1%;
     cursor: pointer;
+    @include transitions(width, 0.3s);
 }
 
 .nav-bar {
@@ -256,6 +257,7 @@ h3 {
 
 /* SPLASH IMG */
 .main-bg {
+    position: static;
     @include full-background-mobile("../../imgs/no-flight-edit-filter-sm.jpg");
     width: 100%;
     padding-top: 10vh;
@@ -381,12 +383,17 @@ h3 {
 }
 
 .skills-section, .skills-section-two {
+    text-align: left;
     padding: 0;
     @include transitions(all, 0.3s);
 }
 
 .skills-section-two {
     padding-bottom: 1em;
+}
+
+.skill-names {
+    text-align: right;
 }
 
 .skill-single {
@@ -431,7 +438,7 @@ h3 {
     top: 0;
     bottom: 0;
     width: 10px;
-    background: $dullsky;
+    background: $sand;
     left: 20%;
 }
 
@@ -454,20 +461,20 @@ h3 {
 
 .cbp_tmtimeline > li .cbp_tmtime span:first-child {
     font-size: 0.5em;
-    color: $darkblue;
+    color: $text;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:last-child {
     font-size: 0.75em;
-    color: $darkblue;
+    color: $text;
 }
 
 
 /* Right content */
 .cbp_tmtimeline > li .cbp_tmlabel {
     margin: 0 10% 0.5% 25%;
-    background: $darkblue;
-    color: $lightyellow;
+    background: $dullsky;
+    color: $darkblue;
     padding: 0.5em;
     font-size: 0.75em;
     font-weight: 300;
@@ -487,7 +494,7 @@ h3 {
 .cbp_tmtimeline > li .cbp_tmlabel h2 { 
     margin: 0;
     padding-bottom: 0.5%;
-    border-bottom: 1px solid $lightyellow;
+    border-bottom: 1px solid $darkblue;
     font-size: 1.25em;
     @include transitions(all, 0.3s);
 }
@@ -501,7 +508,7 @@ h3 {
     width: 0;
     position: absolute;
     pointer-events: none;
-    border-right-color: $darkblue;
+    border-right-color: $dullsky;
     border-width: 10px;
     top: 10px;
 }
@@ -528,10 +535,11 @@ h3 {
     }
 }
 
-.bottom-logo {
+#bottom-logo {
     width: 15%;
     margin-bottom: 2%;
     @include transitions(all, 0.3s);
+    cursor: pointer;
 }
 
 #dl-resume-button {
@@ -569,7 +577,7 @@ h3 {
     }
 
     .main-bg {
-        position:static;
+        position: static;
         @include full-background-mobile-old("../../imgs/no-flight-edit-filter-xs.jpg");
         vertical-align: middle;
         top: auto;
@@ -656,7 +664,7 @@ h3 {
         padding: 0 0.5% 0 0.5%;
     }
 
-    .bottom-logo {
+    #bottom-logo {
         width: 75px;
         margin-bottom: 15px;
     }
@@ -677,7 +685,7 @@ h3 {
         @include transitions(color, 0.3s);
     }
 
-    .bottom-logo {
+    #bottom-logo {
         width: 20%;
     }
 
@@ -692,6 +700,11 @@ h3 {
     .main-tagline {
         color: $text;
         @include transitions(color, 0.3s)
+    }
+
+
+    .skills-section, .skills-section-two {
+        width:25%;
     }
 
 }
@@ -806,6 +819,13 @@ h3 {
         font-weight: bolder;
     }
 
+    .sk-dot {
+        margin-left: 0.6em;
+        width: 0.8em;
+        height: 0.8em;
+        border-radius: 36px;
+    }
+
     .cbp_tmtimeline {
         margin: 0 0 0 0;
         padding: 0;
@@ -838,7 +858,7 @@ h3 {
         padding: 0 3% 0 3%;
     }
 
-    .bottom-logo {
+    #bottom-logo {
         width: 136px;
         margin-bottom: 2%;
     }
@@ -1030,11 +1050,12 @@ h3 {
     }
 
     .skills-section {
-        padding: 0 15px 0 0;
+        padding: 0 0 0 0;
     }
 
-    .skill-single {
-        padding: 2%;
+    .sk-dot {
+        margin-left: 0.2em;
+        margin-right: 0.1em;
     }
 
     .cbp_tmtimeline {
@@ -1080,6 +1101,12 @@ h3 {
         }
     }
 
+
+    .sk-dot {
+        margin-left: 0.3em;
+        margin-right: 0.15em;
+    }  
+
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -1107,7 +1134,7 @@ h3 {
             background: $seashell;
             opacity: 0.85;
         }
-    }      
+    }    
 
 }
 
@@ -1133,8 +1160,9 @@ h3 {
     }
 
     .sk-dot {
-        width: 1em;
-        height: 1em;
+        width: 1.25em;
+        height: 1.25em;
+        margin: 0.15em 0.05em 0.15em 0.4em;
     }
 
     .cbp_tmtimeline {
