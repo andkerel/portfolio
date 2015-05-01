@@ -23,7 +23,6 @@ $(document).ready(function() {
         return false;
     });
 
-
     $('#about-button').click(function() {
         $('#about').animatescroll({padding:0});
         return false;
@@ -33,6 +32,12 @@ $(document).ready(function() {
         $('#contact').animatescroll({padding:0});
         return false;
     });  
+
+    $('.opacity-effect').hover(function() {
+        $(this).find("img").css('opacity', '1');
+    }, function() {
+        $(this).find("img").css('opacity', '0.7');
+    });
 
     $('#bottom-logo').click(function() {
         $('html').animatescroll();

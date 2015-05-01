@@ -43,8 +43,6 @@
     <!-- VIEWPORT UNITS POLYFILL for Android < 4.4 and IE < 8 -->
     <script src="js/prefixfree.min.js"></script>
     <script src="js/prefixfree.viewport-units.js"></script>
-    <!-- MODERNIZER BACKGROUND-SIZE SHIV for IE<9 and iOS<8 -->
-    <script src="js/modernizr.bg-size-shiv.js"></script>
 
     <!-- jQUERY -->
     <script src="js/jquery-1.11.2.min.js"></script>
@@ -81,7 +79,7 @@
             <div class="col-sm-6 col-xs-10 nav-bar">
                 <nav class="nav-collapse">
                     <ul>
-                        <li><a id="portfolio-button" href="#portfolio">portfolio</a></li>
+                        <li><a id="portfolio-button" href="#portfolio">projects</a></li>
                         <li><a id="about-button" href="#about">about</a></li>
                         <li><a id="contact-button" href="#contact">contact</a></li>
                     </ul>
@@ -114,162 +112,224 @@
         <!-- PORTFOLIO -->
         <div class="row portfolio-span">
             <div id="portfolio" class="col-xs-12 portfolio-display">
-                <h2>portfolio</h2>
+                <h2>projects</h2>
             </div>
         </div>
 
         <div class="row portfolio-span">
-            <div class="col-xs-12">
-
-                <figure class="effect-zoe">
-                    <img src="imgs/portfolio/wweather.png" alt="WorseWeather Image"/>
-                    <figcaption class = "hover-caption">
-                        <h3 class="portfolio-title">WorseWeather</h3>
-                        <p class="portfolio-description">
-                            A small application using OpenWeatherMap.org's API to show you a place where the weather is worse than where you are 
-                            (...so stop complaining). Also imagined as a Pebble Smartwatch app.
-                        </p>
-                        <ul class="portfolio-tools">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>AJAX</li>
-                            <li>API</li>
-                        </ul>
-                        <div class = "launch-buttons">
-                            <a href="http://andreakereliuk.com/worse-weather/" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
-                            <a href="https://github.com/andkerel/worse-weather" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
-                            <a href="https://www.behance.net/gallery/25003375/WorseWeather-for-Pebble" target="_blank"><i class="fa fa-behance social-icon-launch"></i></a>
-                        </div>
-                    </figcaption>
-                </figure>
-                <!-- ... -->
-                <figure class="effect-zoe">
-                    <img src="imgs/portfolio/sinbad.gif" alt="Sinbad Image"/>
-                    <figcaption class = "hover-caption">
-                        <h3 class="portfolio-title">sinbad and the phonegap</h3>
-                        <p class="portfolio-description">
-                            Customize Sinbad, the undersea creature! Complete with a CSS3-animation powered spritesheet. 
-                            It can also run as a mobile app by loading it into PhoneGap Build.
-                        </p>
-                        <ul class="portfolio-tools">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Spritesheets</li>
-                            <li>JavaScript</li>
-                            <li>jQuery</li>
-                        </ul>
-                        <div class = "launch-buttons">
-                            <a href="http://andreakereliuk.com/sinbad-and-the-phonegap/" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
-                            <a href="http://github.com/andkerel/sinbad-and-the-phonegap" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
-                        </div>
-                    </figcaption>
-                </figure>
-                <!-- ... -->
-                <figure class="effect-zoe">
-                    <img src="imgs/portfolio/trappedsun.png" alt="Trapped Sun Image"/>
-                    <figcaption class = "hover-caption">
-                        <h3 class="portfolio-title">trapped sun</h3>
-                        <p class="portfolio-description">
-                            A small three.js feature that uses the arrow keys to move the sun around the space box. Try it - you're trapped!
-                        </p>
-                        <ul class="portfolio-tools">
-                            <li>HTML</li>
-                            <li>Canvas</li>
-                            <li>JavaScript</li>
-                            <li>three.js</li>
-                        </ul>
-                        <div class = "launch-buttons">
-                            <a href="http://andreakereliuk.com/trapped-sun/" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
-                            <a href="https://github.com/andkerel/threejs-trapped-sun" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
-                        </div>
-                    </figcaption>
-                </figure>
-                <!-- ... -->
-                <figure class="effect-zoe">
-                    <img src="imgs/portfolio/snowjs.png" alt="CreateJS Snow Tutorial Image"/>
-                    <figcaption class = "hover-caption">
-                        <h3 class="portfolio-title">CreateJS snow tutorial</h3>
-                        <p class="portfolio-description">
-                            A small CreateJS tutorial to have snow gently fall down a webpage using tweens.
-                        </p>
-                        <ul class="portfolio-tools">
-                            <li>HTML</li>
-                            <li>Canvas</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>CreateJS</li>
-                        </ul>
-                        <div class = "launch-buttons">
-                            <a href="http://andreakereliuk.com/createjs-snow-tutorial/" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
-                        </div>
-                    </figcaption>
-                </figure>
-                <!-- ... -->
-                <figure class="effect-zoe">
-                    <img src="imgs/portfolio/soundblink.gif" alt="Soundblink Image"/>
-                    <figcaption class = "hover-caption">
-                        <h3 class="portfolio-title">soundblink</h3>
-                        <p class="portfolio-description">
-                            An arduino project that helps the user determine if they're being too loud by flashing lights at certain sound levels. 
-                            The more flashing, the more obnoxious the user's noise output is.
-                        </p>
-                        <ul class="portfolio-tools">
-                            <li>Hardware</li>
-                            <li>Arduino</li>
-                        </ul>
-                        <div class = "launch-buttons">
-                            <a href="https://github.com/andkerel/obnoxious-sound-meter" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
-                        </div>
-                    </figcaption>
-                </figure>
-                <!-- ... -->
-                <figure class="effect-zoe">
-                    <img src="imgs/portfolio/socialboat.gif" alt="Socialboat Image"/>
-                    <figcaption class = "hover-caption">
-                        <h3 class="portfolio-title">socialboat</h3>
-                        <p class="portfolio-description">
-                            A memory aid application - remember characteristics about people you've only met once or twice, 
-                            but might be important for future networking. Keep track of an anecdote or personal note so you're 
-                            never caught without a conversation starter.
-                        </p>
-                        <ul class="portfolio-tools">
-                            <li>UI/UX</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>PHP</li>
-                            <li>SQL</li>
-                        </ul>
-                        <div class = "launch-buttons">
-                            <a href="https://www.behance.net/gallery/22893729/Socialboat-Web-Application-Project" target="_blank"><i class="fa fa-behance social-icon-launch"></i></a>
-                        </div>
-                    </figcaption>
-                </figure>
-                <!-- ... -->
-                <figure class="effect-zoe">
-                    <img src="imgs/portfolio/workkit.gif" alt="WORKkit Image"/>
-                    <figcaption class = "hover-caption">
-                        <h3 class="portfolio-title">WORKkit</h3>
-                        <p class="portfolio-description">
-                            Targeted towards recently graduated students, this application was created to help organize many concurrent job applications. 
-                            It also helps to beat the automated application process by suggesting keywords from the job description to place into a 
-                            cover letter or resume.
-                        </p>
-                        <ul class="portfolio-tools">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>AJAX</li>
-                            <li>PHP</li>
-                            <li>SQL</li>
-                        </ul>
-                        <div class = "launch-buttons">
-                            <a href="https://github.com/andkerel/keyword-matcher" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
-                        </div>
-                    </figcaption>
-                </figure>
-                <!-- ... -->
+            <div class="col-xs-12 pro-item-wrapper opacity-effect">
+                <div class="pro-img-holder">
+                    <a href="http://jennifervandermeer.ca/lingo" target="_blank"><img class="opacity-img" src="imgs/projects/lingo.png" alt="Lingo Project Image"/></a>
+                </div>
+                <div class="pro-description">
+                    <h3 class="pro-title">Lingo</h3>
+                    <p>
+                        A data visualization that dynamically represents the most common slang word used on twitter in a live snapshot. 
+                        Lingo measures the use of slang words in 5 different English-speaking cities around the world and allows the user to compare slang use in each.
+                        Users can also input their own slang to be approved by the content manager.<br />
+                        In collaboration with <a href="http://jennifervandermeer.ca/" target="_blank">Jennifer Vandermeer</a>, <a href="http://adalynordono.com/" target="_blank">Adalyn Ordono</a>, and <a href="http://nataliabagan.com/" target="_blank">Natalia Bagan</a>.
+                    </p>
+                    <div class="pro-buttons">
+                        <a href="http://jennifervandermeer.ca/lingo" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
+                    </div>
+                    <ul class="pro-tools">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>jQuery</li>
+                        <li>AJAX</li>
+                        <li>Twitter API</li>
+                        <li>PHP</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ... -->
+            <div class="col-xs-12 pro-item-wrapper opacity-effect">
+                <div class="pro-img-holder">
+                    <a href="http://andreakereliuk.com/worse-weather/" target="_blank"><img class="opacity-img" src="imgs/projects/worseweather.png" alt="WorseWeather Splash Page Image"/></a>
+                </div>
+                <div class="pro-description">
+                    <h3 class="pro-title">WorseWeather</h3>
+                    <p>
+                        A small application using OpenWeatherMap.org's API to show you a place where the weather is worse than where you are 
+                        (...so stop complaining). Conceptualized as a Pebble Smartwatch App.
+                    </p>
+                    <div class="pro-buttons">
+                        <a href="http://andreakereliuk.com/worse-weather/" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
+                        <a href="https://github.com/andkerel/worse-weather" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
+                        <a href="https://www.behance.net/gallery/25003375/WorseWeather-for-Pebble" target="_blank"><i class="fa fa-behance social-icon-launch"></i></a>
+                    </div>
+                    <ul class="pro-tools">
+                        <li>UI/UX</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>jQuery</li>
+                        <li>AJAX</li>
+                        <li>OpenWeatherMap.org API</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ... -->
+            <div class="col-xs-12 pro-item-wrapper opacity-effect">
+                <div class="pro-img-holder">
+                    <a href="#" target="_blank"><img class="opacity-img" src="imgs/projects/kickster.png" alt="Entry page to the Kickster multiuser application."/></a>
+                </div>
+                <div class="pro-description">
+                    <h3 class="pro-title">Kickster</h3>
+                    <p>
+                        
+                    </p>
+                    <div class="pro-buttons">
+                        <a href="#" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
+                    </div>
+                    <ul class="pro-tools">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>jQuery</li>
+                        <li>Node.js</li>
+                        <li>Socket.io</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ... -->
+            <div class="col-xs-12 pro-item-wrapper opacity-effect">
+                <div class="pro-img-holder">
+                    <a href="http://andreakereliuk.com/sinbad-and-the-phonegap/" target="_blank"><img class="opacity-img" src="imgs/projects/sinbad.png" alt="Sinbad the Undersea Creature"/></a>
+                </div>
+                <div class="pro-description">
+                    <h3 class="pro-title">Sinbad and the PhoneGap</h3>
+                    <p>
+                        Customize Sinbad, the undersea creature! Complete with a CSS3-animation powered spritesheet. 
+                        It can also run as a mobile app by loading it into PhoneGap Build. 
+                    </p>
+                    <div class="pro-buttons">
+                        <a href="http://andreakereliuk.com/sinbad-and-the-phonegap/" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
+                        <a href="http://github.com/andkerel/sinbad-and-the-phonegap" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
+                    </div>
+                    <ul class="pro-tools">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Spritesheets</li>
+                        <li>JavaScript</li>
+                        <li>jQuery</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ... -->
+            <div class="col-xs-12 pro-item-wrapper opacity-effect">
+                <div class="pro-img-holder">
+                    <a href="http://andreakereliuk.com/trapped-sun/" target="_blank"><img class="opacity-img" src="imgs/projects/trappedsun.png" alt="Trapped Sun Three.js Feature Photo"/></a>
+                </div>
+                <div class="pro-description">
+                    <h3 class="pro-title">Trapped Sun</h3>
+                    <p>
+                        A small three.js feature that uses the arrow keys to move the sun around the space box. Try it - you're trapped!
+                    </p>
+                    <div class="pro-buttons">
+                        <a href="http://andreakereliuk.com/trapped-sun/" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
+                        <a href="https://github.com/andkerel/threejs-trapped-sun" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
+                    </div>
+                    <ul class="pro-tools">
+                        <li>HTML</li>
+                        <li>Canvas</li>
+                        <li>JavaScript</li>
+                        <li>three.js</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ... -->
+            <div class="col-xs-12 pro-item-wrapper opacity-effect">
+                <div class="pro-img-holder">
+                    <a href="http://andreakereliuk.com/createjs-snow-tutorial/" target="_blank"><img class="opacity-img" src="imgs/projects/snowtutorial.png" alt="Snowflakes on a black background."/></a>
+                </div>
+                <div class="pro-description">
+                    <h3 class="pro-title">CreateJS Snow Tutorial</h3>
+                    <p>
+                        A small CreateJS tutorial to have snow gently fall down a webpage using tweens.
+                    </p>
+                    <div class="pro-buttons">
+                        <a href="http://andreakereliuk.com/createjs-snow-tutorial/" target="_blank"><i class="fa fa-external-link-square social-icon-launch"></i></a>
+                        <a href="https://github.com/andkerel/createjs-snow-tutorial" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
+                    </div>
+                    <ul class="pro-tools">
+                        <li>HTML</li>
+                        <li>Canvas</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>CreateJS</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ... -->
+            <div class="col-xs-12 pro-item-wrapper opacity-effect">
+                <div class="pro-img-holder">
+                    <a href="https://github.com/andkerel/obnoxious-sound-meter" target="_blank"><img class="opacity-img" src="imgs/projects/soundblink.gif" alt="An animated GIF of the Soundblink Arduino project showing blinking LED lights"/></a>
+                </div>
+                <div class="pro-description">
+                    <h3 class="pro-title">Soundblink</h3>
+                    <p>
+                        An arduino project that helps the user determine if they're being too loud by flashing lights at certain sound levels. 
+                        The more flashing, the more obnoxious the user's noise output is.
+                    </p>
+                    <div class="pro-buttons">
+                         <a href="https://github.com/andkerel/obnoxious-sound-meter" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
+                    </div>
+                    <ul class="pro-tools">
+                        <li>Hardware</li>
+                        <li>Arduino</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ... -->
+            <div class="col-xs-12 pro-item-wrapper opacity-effect">
+                <div class="pro-img-holder">
+                    <a href="https://github.com/andkerel/keyword-matcher" target="_blank"><img class="opacity-img" src="imgs/projects/workkit.png" alt="WORKkit splash page."/></a>
+                </div>
+                <div class="pro-description">
+                    <h3 class="pro-title">WORKkit</h3>
+                    <p>
+                        
+                    </p>
+                    <div class="pro-buttons">
+                        <a href="https://github.com/andkerel/keyword-matcher" target="_blank"><i class="fa fa-github social-icon-launch"></i></a>
+                    </div>
+                    <ul class="pro-tools">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>AJAX</li>
+                        <li>PHP</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ... -->
+            <div class="col-xs-12 pro-item-wrapper opacity-effect">
+                <div class="pro-img-holder">
+                    <a href="https://www.behance.net/gallery/22893729/Socialboat-Web-Application-Project" target="_blank"><img class="opacity-img" src="imgs/projects/socialboat.png" alt="Socialboat's landing page with a logo and a wave background."/></a>
+                </div>
+                <div class="pro-description">
+                    <h3 class="pro-title"></h3>
+                    <p>
+                        A memory aid application - remember characteristics about people you've only met once or twice, 
+                        but might be important for future networking. Keep track of an anecdote or personal note so you're 
+                        never caught without a conversation starter.
+                    </p>
+                    <div class="pro-buttons">
+                        <a href="https://www.behance.net/gallery/22893729/Socialboat-Web-Application-Project" target="_blank"><i class="fa fa-behance social-icon-launch"></i></a>
+                    </div>
+                    <ul class="pro-tools">
+                        <li>UI/UX</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ... -->
             </div>
         </div>
 
