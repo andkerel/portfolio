@@ -133,6 +133,7 @@ body {
     line-height: 1.4;
     background-color: $lightyellow;
     font-family: $bonveno;
+    overflow-x:hidden;
 }
 
 a {
@@ -305,7 +306,7 @@ h3 {
 }
 
 
-/*PORTFOLIO*/
+/*PORTFOLIO*/   
 
 .portfolio-span {
     width: 100%;
@@ -325,6 +326,7 @@ h3 {
     width: 100%;
     border: 10px solid $lightyellow;
     margin-top: 1em;
+    @include transitions(opacity, 0.8s);
 }
 
 .pro-title {
@@ -347,47 +349,6 @@ h3 {
 .pro-buttons {
     text-align: center;
     margin: 0 auto;
-}
-
-.item-wrapper {
-    width: 100%;
-}
-
-.effect-zoe {
-    background-color: $seashell;
-    margin: 0 auto 2em auto;
-    width: 100%;
-    img {
-        width: 100%;
-        border: 10px solid $seashell;
-        @include transitions(width, 0.5s);
-    }
-}
-
-.portfolio-title {
-    font-size: 1.75em;
-}
-
-.portfolio-description {
-    text-transform: lowercase;
-}
-
-.hover-caption {
-    padding: 10px;
-}
-
-.portfolio-tools {
-    display: inline-block;
-    padding: 0;
-    margin-top: 0;
-    li {
-        display: inline-block;
-        font-size: 0.75em;
-        border: 1px solid $sand;
-        border-radius: 4px;
-        padding: 0.5em;
-        margin-top: 0.5em;
-    }
 }
 
 .social-icon-launch {
@@ -920,6 +881,11 @@ h3 {
 /* SOCIAL MEDIA ICONS BREAK SIZE - LARGE SCREEN SIZES*/
 @media screen and (min-width: 768px) {
 
+    h3 {
+        border-width: 2px;
+        padding-left: 0;
+    }
+
     .nav-collapse { 
         text-align: center; 
     }
@@ -984,7 +950,7 @@ h3 {
         display: inline-block;
         margin-left: 20px;
         p {
-            font-size: 0.8em;
+            font-size: 0.9em;
         }
         vertical-align: middle;
     }
@@ -997,94 +963,9 @@ h3 {
         li {
             font-size: 0.7em;
             padding: 0.7em 1.2em;
-        }
-    }
-
-    .effect-zoe {
-        display: inline-block;
-        position: relative;
-        overflow: hidden;
-        margin: 10px 1%;
-        min-width: 320px;
-        max-width: 400px;
-        width: 45%;
-        height: 45%;
-        text-align: center;
-        img {
-            position: relative;
-            display: block;
-            // min-height: 100%;
-            max-width: 100%;
-            opacity: 1;
-            @include transitions(opacity, 0.3s);
-        }
-        figcaption {
-            position: absolute;
-            font-size: 1em;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden; 
-
-            // top: 90%;
-            width: 95%;
-            margin: 0 auto;
-            bottom: 0;
-            padding: 2.5%;
-            // height: 1.75em;
-            color: $text;
-            -webkit-transition: -webkit-transform 0.35s;
-            transition: transform 0.35s;
-            -webkit-transform: translate3d(0,100%,0);
-            transform: translate3d(0,100%,0);
-            h3 {
-                position: absolute;
-                bottom: 10px;
-                left: 20px;
-                color: $text;
-                font-weight: bolder;
-                border: none;
-                font-size: 1.2em;
-                display: inline-block;
-                -webkit-transition: -webkit-transform 0.35s;
-                transition: transform 0.35s;
-            }
-        }
-        figcaption, figcaption > a {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .launch-buttons {
-            position: absolute;
-            right: 20px;
-            bottom: 15px;
-            i {
-                font-size: 2em;
-                -webkit-transition: -webkit-transform 0.35s;
-                transition: transform 0.35s;
-                -webkit-transform: translate3d(0,200%,0);
-                transform: translate3d(0,200%,0);
-            }
-        }
-        .portfolio-description {
-            opacity: 0.85;
-            position: absolute;
-            background: $seashell;
-            top: 22%;
-            color: $text;
-            font-size: 60%;
-            width: 90%;
-            margin: 0 2.5% 0 2.5%;
-            border-radius: 10px;
-            padding: 2.5%;
-            -webkit-transition: opacity 0.35s;
-            transition: opacity 0.35s;
-            -webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
-            -webkit-transition: -webkit-transform 0.35s;
-            transition: transform 0.35s;
-            -webkit-transform: translate3d(-200%,-195%,0);
-            transform: translate3d(-200%,-195%,0);
+            background: none;
+            border-color: $sand;
+            border-width: 2px;
         }
     }
 
@@ -1092,49 +973,6 @@ h3 {
         font-size: 2em;
         margin: 0 0.05em 0 0.05em;
     }
-
-    .portfolio-tools {
-        -webkit-transition: -webkit-transform 0.35s;
-        transition: transform 0.35s;
-        -webkit-transform: translate3d(0,-1000%,0);
-        transform: translate3d(0,-1000%,0);
-        li {
-            font-size: 0.6em;
-            background: $seashell;
-            opacity: 0.85;
-        }
-    }
-
-    .effect-zoe:hover {
-        figcaption, figcaption h3, .launch-buttons i {
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-        }
-        img {
-            opacity: 0.3;
-            @include transitions(opacity, 0.3s);
-        }
-        h3 {
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-           -webkit-transition-delay: 0.05s;
-            transition-delay: 0.05s; 
-        }
-        .portfolio-tools {
-            -webkit-transition: -webkit-transform 0.35s;
-            transition: transform 0.35s;
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-        }
-        .portfolio-description {
-            -webkit-transition: -webkit-transform 0.35s;
-            transition: transform 0.35s;
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-        }
-
-    }
-
 
     .about-description {
         text-align: left;
@@ -1178,16 +1016,6 @@ h3 {
         width: 800px;
     }
 
-    .effect-zoe {
-        figcaption h3 {
-            font-size: 1.4em;
-        }
-        .portfolio-description {
-            font-size: 70%;
-            top: 24%;
-        }
-    }
-
     .social-icon-launch {
         font-size: 2em;
         margin: 0 0.05em 0 0.05em;
@@ -1225,16 +1053,6 @@ h3 {
     .pro-img-holder {
         width: 200px;
     }
-  
-    .effect-zoe {
-        figcaption h3 {
-            font-size: 1.6em;
-        }
-        .portfolio-description {
-            font-size: 83%;
-            top: 23%;
-        }
-    }
 
     .social-icon-launch {
         font-size: 2em;
@@ -1250,10 +1068,10 @@ h3 {
     }    
 
     .opacity-img {
-        opacity: 0.7;
+        opacity: 0.5;
         width: 200px;
         @include transitions(width, 0.3s);
-        @include transitions(opacity, 0.3s);
+        @include transitions(opacity, 0.8s);
     }
 
     .opacity-return {

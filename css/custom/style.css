@@ -17,7 +17,8 @@ body {
   color: #444444;
   line-height: 1.4;
   background-color: #f3e5d3;
-  font-family: bonvenocflight, Verdana, sans-serif; }
+  font-family: bonvenocflight, Verdana, sans-serif;
+  overflow-x: hidden; }
 
 a {
   font-weight: bold;
@@ -240,7 +241,11 @@ h3 {
 .opacity-img {
   width: 100%;
   border: 10px solid #f3e5d3;
-  margin-top: 1em; }
+  margin-top: 1em;
+  -webkit-transition: opacity 0.8s;
+  -moz-transition: opacity 0.8s;
+  -o-transition: opacity 0.8s;
+  transition: opacity 0.8s; }
 
 .pro-title {
   font-size: 1.75em; }
@@ -259,42 +264,6 @@ h3 {
 .pro-buttons {
   text-align: center;
   margin: 0 auto; }
-
-.item-wrapper {
-  width: 100%; }
-
-.effect-zoe {
-  background-color: #F1F0F3;
-  margin: 0 auto 2em auto;
-  width: 100%; }
-  .effect-zoe img {
-    width: 100%;
-    border: 10px solid #F1F0F3;
-    -webkit-transition: width 0.5s;
-    -moz-transition: width 0.5s;
-    -o-transition: width 0.5s;
-    transition: width 0.5s; }
-
-.portfolio-title {
-  font-size: 1.75em; }
-
-.portfolio-description {
-  text-transform: lowercase; }
-
-.hover-caption {
-  padding: 10px; }
-
-.portfolio-tools {
-  display: inline-block;
-  padding: 0;
-  margin-top: 0; }
-  .portfolio-tools li {
-    display: inline-block;
-    font-size: 0.75em;
-    border: 1px solid #f3cca2;
-    border-radius: 4px;
-    padding: 0.5em;
-    margin-top: 0.5em; }
 
 .social-icon-launch {
   font-size: 2.5em;
@@ -771,6 +740,10 @@ h3 {
 /* Small devices (tablets, 768px and up) */
 /* SOCIAL MEDIA ICONS BREAK SIZE - LARGE SCREEN SIZES*/
 @media screen and (min-width: 768px) {
+  h3 {
+    border-width: 2px;
+    padding-left: 0; }
+
   .nav-collapse {
     text-align: center; }
 
@@ -833,133 +806,21 @@ h3 {
     margin-left: 20px;
     vertical-align: middle; }
     .pro-description p {
-      font-size: 0.8em; }
+      font-size: 0.9em; }
 
   .pro-buttons {
     text-align: left; }
 
   .pro-tools li {
     font-size: 0.7em;
-    padding: 0.7em 1.2em; }
-
-  .effect-zoe {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    margin: 10px 1%;
-    min-width: 320px;
-    max-width: 400px;
-    width: 45%;
-    height: 45%;
-    text-align: center; }
-    .effect-zoe img {
-      position: relative;
-      display: block;
-      max-width: 100%;
-      opacity: 1;
-      -webkit-transition: opacity 0.3s;
-      -moz-transition: opacity 0.3s;
-      -o-transition: opacity 0.3s;
-      transition: opacity 0.3s; }
-    .effect-zoe figcaption {
-      position: absolute;
-      font-size: 1em;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      width: 95%;
-      margin: 0 auto;
-      bottom: 0;
-      padding: 2.5%;
-      color: #444444;
-      -webkit-transition: -webkit-transform 0.35s;
-      transition: transform 0.35s;
-      -webkit-transform: translate3d(0, 100%, 0);
-      transform: translate3d(0, 100%, 0); }
-      .effect-zoe figcaption h3 {
-        position: absolute;
-        bottom: 10px;
-        left: 20px;
-        color: #444444;
-        font-weight: bolder;
-        border: none;
-        font-size: 1.2em;
-        display: inline-block;
-        -webkit-transition: -webkit-transform 0.35s;
-        transition: transform 0.35s; }
-    .effect-zoe figcaption, .effect-zoe figcaption > a {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%; }
-    .effect-zoe .launch-buttons {
-      position: absolute;
-      right: 20px;
-      bottom: 15px; }
-      .effect-zoe .launch-buttons i {
-        font-size: 2em;
-        -webkit-transition: -webkit-transform 0.35s;
-        transition: transform 0.35s;
-        -webkit-transform: translate3d(0, 200%, 0);
-        transform: translate3d(0, 200%, 0); }
-    .effect-zoe .portfolio-description {
-      opacity: 0.85;
-      position: absolute;
-      background: #F1F0F3;
-      top: 22%;
-      color: #444444;
-      font-size: 60%;
-      width: 90%;
-      margin: 0 2.5% 0 2.5%;
-      border-radius: 10px;
-      padding: 2.5%;
-      -webkit-transition: opacity 0.35s;
-      transition: opacity 0.35s;
-      -webkit-backface-visibility: hidden;
-      /* Fix for Chrome 37.0.2062.120 (Mac) */
-      -webkit-transition: -webkit-transform 0.35s;
-      transition: transform 0.35s;
-      -webkit-transform: translate3d(-200%, -195%, 0);
-      transform: translate3d(-200%, -195%, 0); }
+    padding: 0.7em 1.2em;
+    background: none;
+    border-color: #f3cca2;
+    border-width: 2px; }
 
   .social-icon-launch {
     font-size: 2em;
     margin: 0 0.05em 0 0.05em; }
-
-  .portfolio-tools {
-    -webkit-transition: -webkit-transform 0.35s;
-    transition: transform 0.35s;
-    -webkit-transform: translate3d(0, -1000%, 0);
-    transform: translate3d(0, -1000%, 0); }
-    .portfolio-tools li {
-      font-size: 0.6em;
-      background: #F1F0F3;
-      opacity: 0.85; }
-
-  .effect-zoe:hover figcaption, .effect-zoe:hover figcaption h3, .effect-zoe:hover .launch-buttons i {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); }
-  .effect-zoe:hover img {
-    opacity: 0.3;
-    -webkit-transition: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    -o-transition: opacity 0.3s;
-    transition: opacity 0.3s; }
-  .effect-zoe:hover h3 {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-transition-delay: 0.05s;
-    transition-delay: 0.05s; }
-  .effect-zoe:hover .portfolio-tools {
-    -webkit-transition: -webkit-transform 0.35s;
-    transition: transform 0.35s;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); }
-  .effect-zoe:hover .portfolio-description {
-    -webkit-transition: -webkit-transform 0.35s;
-    transition: transform 0.35s;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); }
 
   .about-description {
     text-align: left; }
@@ -989,12 +850,6 @@ h3 {
   .portfolio-span {
     width: 800px; }
 
-  .effect-zoe figcaption h3 {
-    font-size: 1.4em; }
-  .effect-zoe .portfolio-description {
-    font-size: 70%;
-    top: 24%; }
-
   .social-icon-launch {
     font-size: 2em;
     margin: 0 0.05em 0 0.05em; }
@@ -1019,12 +874,6 @@ h3 {
   .pro-img-holder {
     width: 200px; }
 
-  .effect-zoe figcaption h3 {
-    font-size: 1.6em; }
-  .effect-zoe .portfolio-description {
-    font-size: 83%;
-    top: 23%; }
-
   .social-icon-launch {
     font-size: 2em;
     margin: 0 0.1em 0 0.1em; }
@@ -1035,16 +884,16 @@ h3 {
     opacity: 0.85; }
 
   .opacity-img {
-    opacity: 0.7;
+    opacity: 0.5;
     width: 200px;
     -webkit-transition: width 0.3s;
     -moz-transition: width 0.3s;
     -o-transition: width 0.3s;
     transition: width 0.3s;
-    -webkit-transition: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    -o-transition: opacity 0.3s;
-    transition: opacity 0.3s; }
+    -webkit-transition: opacity 0.8s;
+    -moz-transition: opacity 0.8s;
+    -o-transition: opacity 0.8s;
+    transition: opacity 0.8s; }
 
   .opacity-return {
     opacity: 1; } }

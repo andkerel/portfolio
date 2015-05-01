@@ -19,7 +19,7 @@ $(document).ready(function() {
     });
 
     $('#portfolio-button').click(function() {
-        $('#portfolio').animatescroll({padding:0});
+        $('#projects').animatescroll({padding:0});
         return false;
     });
 
@@ -34,9 +34,9 @@ $(document).ready(function() {
     });  
 
     $('.opacity-effect').hover(function() {
-        $(this).find("img").css('opacity', '1');
+        $(this).find("img").addClass('opacity-return');
     }, function() {
-        $(this).find("img").css('opacity', '0.7');
+        $(this).find("img").removeClass('opacity-return');
     });
 
     $('#bottom-logo').click(function() {
