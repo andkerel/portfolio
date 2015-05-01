@@ -136,6 +136,14 @@ body {
     overflow-x:hidden;
 }
 
+.container-fluid {
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+}
+
 a {
     font-weight: bold;
     color: $dullsky;
@@ -170,7 +178,7 @@ h3 {
     vertical-align: middle;
     position: absolute;
     text-align: center;
-    width: 100vw;
+    width: 100%;
     z-index: 10000;
     overflow: hidden;
     @include transitions(height, 0.3s);
@@ -559,6 +567,16 @@ h3 {
     body {
         background-color: $lightyellow;
         font-weight: bold;
+        padding: 0;
+    }
+
+    .container-fluid {
+        padding: 0;
+    }
+
+    .row {
+        margin-right: 0px;
+        margin-left: 0px;
     }
 
     .top-bar {
@@ -579,6 +597,7 @@ h3 {
         top: auto;
         padding-top: 0;
         height: 350px;
+        width: 100%;
         color: $text;
     }
 
@@ -624,6 +643,11 @@ h3 {
 
     .hover-caption {
         padding: 0;
+    }
+
+    .portfolio-span {
+        width: 95%;
+        margin: 0 auto;
     }
 
     .cbp_tmtimeline > li .cbp_tmlabel {
@@ -672,6 +696,10 @@ h3 {
 /*MIDDLEMAN MEDIA QUERIES*/
 @media screen and (min-width: 20em) {
 
+    .portfolio-span {
+        width: 90%;
+    }
+
     .nav-toggle {
         padding: 8.5%;
     }
@@ -682,7 +710,7 @@ h3 {
     }
 
     .opacity-img {
-        width: 55%;
+        width: 95%;
     }
 
     #bottom-logo {
@@ -914,7 +942,7 @@ h3 {
     /*PORTFOLIO*/
 
     .portfolio-span {
-        width:95%;
+        width:98%;
     }
 
     .pro-item-wrapper {
@@ -933,7 +961,7 @@ h3 {
 
     .pro-img-holder {
         display: inline-block;
-        width: 25%;
+        width: 29.5%;
         max-width: 200px;
         margin: 0 auto;
         padding: 0;
@@ -945,7 +973,7 @@ h3 {
     }
 
     .pro-description {
-        width: 65%;
+        width: 68%;
         text-align: left;
         display: inline-block;
         margin-left: 20px;
@@ -1011,10 +1039,6 @@ h3 {
 /*for portfolio item font sizes */
 
 @media screen and (min-width: 850px) {
-
-    .portfolio-span {
-        width: 800px;
-    }
 
     .social-icon-launch {
         font-size: 2em;
